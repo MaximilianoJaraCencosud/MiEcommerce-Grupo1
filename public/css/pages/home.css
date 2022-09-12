@@ -1,3 +1,38 @@
-body{
-    background-color: aqua;
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #EFEFEF;
+}
+
+.nav-products{
+    width: 385px;
+    height: 285px;
+    background-color: #333333;
+    margin: 24px 16px 0;
+}
+
+.nav-products__list{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-products a{
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
