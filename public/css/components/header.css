@@ -1,1 +1,10 @@
-/* dkpgjpadga */
+.site-header {
+    background-color: #FFFFFF40; 
+    padding: 10px;
+}
+.header{
+    height: 64px;
+    display: flex;
+    align-items: flex-start;
+    margin: 16px
+}
