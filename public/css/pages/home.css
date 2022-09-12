@@ -26,37 +26,6 @@ main{
 }
 
 
-/* Navegación de productos */
-.nav-products{
-    width: 385px;
-    height: 285px;
-    background-color: #333333;
-    margin: 24px 16px 0;
-    border-radius: 16px;
-}
-
-.nav-products__list{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 16px 24px;
-    line-height: 1.6;
-}
-
-/* .nav-products__list li a{
-    display: flex;
-
-} */
-
-.nav-products__list li img{
-    margin-right: 7px;
-}
-
-.nav-products a{
-    font-size: 16px;
-    color: #FFFFFF;
-}
-
 
 
 /* Sección Card Hero */
@@ -81,4 +50,9 @@ main{
 /* Sección productos de interes */
 .section-title{
     font-size: 24px;
+}
+
+
+.icon{
+    fill: #EFEFEF;
 }

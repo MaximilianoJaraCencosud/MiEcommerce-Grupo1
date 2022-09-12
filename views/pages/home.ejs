@@ -12,69 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Estilos Css -->
-    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="./css/pages/styles.css">
 </head>
 <body>
 
-    <header>
-        <h2>Aqui va el componente Header</h2>
-    </header>
+        <!-- Importación del Header -->
+        <%- include('../partials/headersearch') %>
     
     <main>
 
-        <!-- Navegación de Productos -->
-        <nav class="nav-products">
-            <ul class="nav-products__list">
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/tablet-cellphone.svg" alt="">
-                        Electrónica
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/hamburger.svg" alt="">
-                        Alimentos
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/glass-mug-variant.svg" alt="">
-                        Bebidas
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/tshirt-crew.svg" alt="">
-                        Indumentaria
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/controller-classic.svg" alt="">
-                        Juegos
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/steering.svg" alt="">
-                        Automotor
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/sofa-single.svg" alt="">
-                        Hogar
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/gift-outline.svg" alt="">
-                        Otros
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <!-- Importación de menú de categorias -->
+        <%- include('../partials/categories') %>
 
         <!-- Sección Card Hero -->
         <section class="section-hero">
@@ -283,59 +231,9 @@
 
         </section>
 
-        <!-- Navegación de Productos -->
-        <nav class="nav-products">
-            <ul class="nav-products__list">
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/tablet-cellphone.svg" alt="">
-                        Electrónica
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/hamburger.svg" alt="">
-                        Alimentos
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/glass-mug-variant.svg" alt="">
-                        Bebidas
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/tshirt-crew.svg" alt="">
-                        Indumentaria
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/controller-classic.svg" alt="">
-                        Juegos
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/steering.svg" alt="">
-                        Automotor
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/sofa-single.svg" alt="">
-                        Hogar
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./images/nav-home/gift-outline.svg" alt="">
-                        Otros
-                    </a>
-                </li>
-            </ul>
-        </nav>
+
+        <!-- Importación de menú de categorias -->
+        <%- include('../partials/categories') %>
 
 
     </main>
