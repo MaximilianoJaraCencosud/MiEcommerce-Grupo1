@@ -41,9 +41,13 @@ width: 95%;
     /* max-width: 500px; */
 }
 
-.main-product__product-title{
+.main-product__product-title, .main-product__product-title-alternative{
     align-self: flex-start;
     padding: 16px;
+}
+
+.main-product__product-title-alternative{
+    display: none;
 }
 
 h3{
@@ -208,10 +212,15 @@ h3{
 
     .main-product_info{
         width: 25%;
+        align-self: flex-start;
     }
     
     .main-product__price{
         display: flex;
         justify-content: left;
+    }
+
+    .main-product__product-title-alternative{
+        display: block;
     }
 }
