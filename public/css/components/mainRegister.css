@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Open Sans;
+  }
+  
+  .color-fondo {
+    margin: 0px;
+    background-color: #0cb093;
+    width: 414px;
+    height: 264px;
+  }
+  
+  .contenedor-registro {
+    max-width: 320px;
+    height: 384px;
+    margin: -200px 47px 126px 47px;
+  }
+  
+  .contenedor-registro p {
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+  .contenedor-registro__inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    width: 320px;
+    height: 344px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    /* margin-top: 48px; */
+  }
+
+  .form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    gap: 16px;
+    align-items: center;
+    align-content: center;
+  }
+  
+  input {
+    width: 256px;
+    height: 32px;
+    border-radius: 16px;
+    border: 1px solid #00000080;
+    font-size: 12px;
+    padding-left: 16px;
+  }
+  
+  .contenedor-registro__titulo {
+    margin: 48px 24px 24px 32px;
+    width: 264px;
+    height: 48px;
+    font-size: 32px;
+    font-family: Open Sans;
+    font-weight: 400;
+    text-align: left;
+  }
+  
+  .btn-CrearCuenta {
+    background-color: #494f51;
+    color: #ffffff;
+    border: none;
+    font-size: 12px;
+    width: 256px;
+    height: 32px;
+    border-radius: 16px;
+    font-weight:400;
+  }
