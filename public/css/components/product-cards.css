@@ -64,3 +64,23 @@
         flex-direction: column;
     }
 }
+
+/* DETALLES CONTENEDOR: */
+
+/* 
+/* CONTENEDOR */
+/* .main-product__related-product{
+    width: 95%;
+    max-width: 500;
+    font-family: 'Open Sans', sans-serif;
+} 
+@media (min-width:768px) {
+    .main-product__related-product{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 95%;
+    }
+
+*/
+
