@@ -4,9 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Producto</title>
+    <link rel="stylesheet" href="/css/pages/products.css">
+    <link rel="stylesheet" href="/css/components/product-cards.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">     
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <header>
+        <h2>header</h2>
+    </header>
+
+    <main>
+        <div class="volver">
+            <a href="./home.ejs"><img src="/images/arrow-left.svg" alt="">Volver al listado</a>
+        <p><img src="/images/chevron-right.svg" alt="">Bebidas</p>
+        </div>
+        <section class="main-product__product">
+            <div class="main-product__product-title">
+                <h3>Whiskey Jack Daniels</h3>
+                <h3>Honey 750ml</h3>
+            </div>
+
+            <div class="main-product__image">
+                <img src="https://dummyjson.com/image/i/products/30/1.jpg" alt="Imagen principal" srcset="" class="imagenPrincipal">
+                <div class="main-product__miniaturas">
+                    <img src="https://dummyjson.com/image/i/products/30/2.jpg" alt="">
+                    <img src="https://dummyjson.com/image/i/products/30/3.jpg" alt="">
+                    <img src="https://dummyjson.com/image/i/products/30/thumbnail.jpg" alt="">
+                </div>
+            </div>
+            <div class="main-product_info">
+            <div class="main-product__price">
+                <h3>19.900</h3>
+                <p>PUNTOS</p>
+            </div>
+
+            
+                <div class="main-product__desc">
+                    <p>
+                        Un verdaderamente fabuloso licor de whisky Jack Daniels. Está hecho con una mezcla de ricas especias y suave, miel tersa y el resultado es delicioso sobre hielo o café.
+                        Aroma de caramelo y roble carbonizado, un poco de flor de naranja, miel de manuka y vainilla.
     
+                        Boca: grueso y cremoso, con notas de vainilla, roble tostado, miel de nuevo, un poco de albaricoque también.
+                        Acabado: De buena longitud - redondeado y rico.
+    
+                        No incluye vasos, la foto es sólo ilustrativa
+                    </p>
+                </div>
+                
+                <div class="main-product__btn">
+                    <input type="button" value="Agragar al Carrito">
+                </div>
+            </div>
+        </section>
+        <div class="main-product__related-products-title">
+            <h3>También te puede interesar</h3>
+        </div>
+        <section class="main-product__related-product">
+            
+            <%- include('../partials/product-card') %>
+            <%- include('../partials/product-card') %>
+            <%- include('../partials/product-card') %>
+            <%- include('../partials/product-card') %>
+        </section>
+
+        <section class="main-product__list">
+            
+        </section>
+    </main>
+
+
+    <footer>
+        <h2>footer</h2>
+    </footer>
 </body>
 </html>

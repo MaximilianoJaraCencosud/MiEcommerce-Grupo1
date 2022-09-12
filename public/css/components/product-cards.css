@@ -1,0 +1,66 @@
+
+/* TARJETA */
+.main-product__related-product h3{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 35px 0 25px 0
+}
+
+.main-product__related-product-card{
+    display: flex;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 16px;
+}
+
+.main-product__related-product-card img{
+    height: 128px;
+    width: 128px;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.section-article__desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.desc{
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.desc p{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.section-article__price{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.section-article__price p{
+    margin: 0;
+    padding: 0;
+}
+
+.puntos{
+    font-size: 8px;
+    font-weight: 300;
+}
+
+@media (min-width:768px) {
+    .main-product__related-product-card{
+        width: 244px;
+        flex-direction: column;
+    }
+}
