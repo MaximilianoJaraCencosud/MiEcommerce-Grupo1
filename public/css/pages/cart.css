@@ -5,6 +5,7 @@ html * {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
 }
+
 .cart {
   background-color: #efefef;
   padding: 16px;
@@ -113,3 +114,15 @@ html * {
   justify-content: end;
   margin-top: 24px;
 }
+
+@media screen and (min-width: 1280px) {
+    .cart {
+      padding: 16px 128px 16px 128px;
+    }
+
+   .cart__product-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   }
+  }
