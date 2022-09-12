@@ -34,9 +34,6 @@ html * {
   }
   
   .contenedor-registro__inputs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 320px;
     height: 344px;
     background-color: #ffffff;
