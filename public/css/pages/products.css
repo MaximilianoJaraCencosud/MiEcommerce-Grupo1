@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1024px;
+    max-width: 1075px;
     margin: auto;
 }
 
@@ -69,6 +69,7 @@ h3{
 .main-product__image img{
     width: 95%;
     border-radius: 8px;
+    
 }
 
 .main-product__miniaturas{
@@ -163,6 +164,12 @@ h3{
     font-family: 'Open Sans', sans-serif;
 }
 
+@media (max-width:767px){
+    .main-product__product, .volver, .main-product__related-product, .main-product__related-products-title{
+        max-width: 500px;
+    }
+} 
+
 @media (min-width:768px) {
     .main-product__related-product{
         display: flex;
@@ -191,6 +198,7 @@ h3{
 
     .main-product__image img{
         width: 90%;
+        align-self: flex-start;
     }
     
     .main-product__miniaturas{
@@ -214,7 +222,7 @@ h3{
     .main-product_info{
         display: flex;
         flex-direction: column;
-        width: 25%;
+        width: 27%;
         /* align-self: flex-start; */
         border: solid 1px #CCCCCC;
         margin-top: 8px;
