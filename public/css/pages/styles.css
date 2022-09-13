@@ -1,2 +1,7 @@
+@import '../pages/home.css';
 @import '../components/header.css';
 @import '../components/headersearch.css';
+@import '../components/categories.css';
+@import '../pages/products.css';
+@import '../components/product-cards.css';
+@import '../components/footer.css';

@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./css/pages/login.css">
+  </head>
+  <body>
+
+     <%- include('../partials/header') %>
+    <main class="register-main">
+      <div class="color-fondo"></div>
+      <div class="contenedor-registro">
+        <div class="contenedor-registro__inputs">
+          <h2 class="contenedor-registro__titulo">¡Hola!</h2>
+          <form class="form" action="" method="POST">
+          <input type="text" placeholder="Tu nombre de usuario" />
+          <input type="text" placeholder="Tu contraseña" />
+          <button class="btn-iniciarSesion" value="Iniciar Sesión">
+            Iniciar Sesión
+          </button>
+        </form>
+        </div>
+        <p class="texto-iniciaSesion" for="">
+          ¿No tienes cuenta? <a href="#">Regístrate </a>
+        </p>
+      </div>
+    </main>
+    <footer>
+      <div><p>© MiEcommerce. Todos los derechos reservados.</p></div>
+      <div><i></i><i></i><i></i><i></i></div>
+      <div>
+        <i> </i>
+        <p>App Store</p>
+        <i></i>
+        <p>Google Play</p>
+      </div>
+    </footer>
+  </body>
 </html>
