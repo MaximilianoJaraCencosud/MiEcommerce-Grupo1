@@ -36,9 +36,14 @@ main{
 
 @media (min-width: 811px){
     .bg-green{
+        height: 256px;
         top: 336px;
     }
+
 }
+
+
+
 
 
 
@@ -63,7 +68,19 @@ main{
     font-size: 18px;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    position: relative;
 }
+
+.gradient{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg,rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.08) 40%, rgba(0,0,0,0.59) 80%);
+    z-index: 1;
+}
+
 .product-hero:nth-child(1){
     background-image: url('../../images/disneybg.jpg');
 }
@@ -93,6 +110,7 @@ main{
     justify-content: center;
     margin-bottom: 24px;
     margin-right: 8px;
+    z-index: 11;
 }
 
 .product-hero__legend p{
@@ -146,12 +164,21 @@ main{
 
 /* Sección productos de interes */
 
-.section-interes{
+.container{
     width: 100%;
+    max-width: 1024px;
     padding: 16px;
 }
+
 
 .section-title{
     font-size: 24px;
     font-weight: 400;
+}
+
+
+@media (min-width: 811px){
+    .section-title{
+        margin-top: 72px;
+    }
 }
