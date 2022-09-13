@@ -64,9 +64,9 @@
     }
 
     .section-article__desc{
-       flex-direction: row;
-       padding: 8px;
-       align-content: flex-start;
+        flex-direction: row;
+        padding: 8px;
+        align-content: flex-start;
     }
 
     .section-article__price:first-child{
@@ -98,18 +98,18 @@
 
 /* 
 /* CONTENEDOR */
-/* .main-product__related-product{
-    width: 95%;
+
+.main-product__related-product{
+    width: 100%;
     max-width: 500;
-    font-family: 'Open Sans', sans-serif;
+    gap: 10px;
 } 
+
 @media (min-width:768px) {
     .main-product__related-product{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        width: 95%;
-    }
+        width: 100%;
+}
 
-*/
 
