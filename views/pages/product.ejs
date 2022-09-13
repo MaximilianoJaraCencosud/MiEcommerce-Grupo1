@@ -18,7 +18,7 @@
 <body>
     <%- include('../partials/headersearch') %>
 
-    <main>
+    <main class="main-products">
         <div class="volver">
             <a href="./"><img src="/images/arrow-left.svg" alt="">Volver al listado</a>
         <p><img src="/images/chevron-right.svg" alt="">Bebidas</p>
@@ -67,11 +67,9 @@
             <h3>También te puede interesar</h3>
         </div>
         <section class="main-product__related-product">
-            
-            <%- include('../partials/product-card') %>
-            <%- include('../partials/product-card') %>
-            <%- include('../partials/product-card') %>
-            <%- include('../partials/product-card') %>
+            <% for(let i=0; i < 4; i++) { %>   
+                <%- include('../partials/product-card', {product: products[i]}) %>
+            <% } %>
         </section>
         <%- include('../partials/categories') %>
         

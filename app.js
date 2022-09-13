@@ -31,6 +31,8 @@ app.get("/cart", (req, resp) => {
   });
 
   app.get("/products", (req, resp) => {
-    resp.render("pages/product");
+    resp.render("pages/product" ,{
+      products : products
+    });
   });
   
