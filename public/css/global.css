@@ -25,3 +25,12 @@ li{
     list-style: none;
 }
 
+.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout-container{
+flex-grow: 1;
+}
