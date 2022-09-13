@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const port = 8080;
+let products = require('./public/data/products.json')
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -24,7 +25,9 @@ app.get("/login", (req, resp) => {
 });
 
 app.get("/cart", (req, resp) => {
-    resp.render("pages/cart");
+    resp.render("pages/cart" ,{
+      products : products
+    });
   });
 
   app.get("/products", (req, resp) => {
