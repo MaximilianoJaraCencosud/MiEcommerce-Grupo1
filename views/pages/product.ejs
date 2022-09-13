@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Producto</title>
-    <link rel="stylesheet" href="/css/pages/products.css">
-    <link rel="stylesheet" href="/css/components/product-cards.css">
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="./css/pages/styles.css">
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -14,13 +16,11 @@
 
 </head>
 <body>
-    <header>
-        <h2>header</h2>
-    </header>
+    <%- include('../partials/headersearch') %>
 
     <main>
         <div class="volver">
-            <a href="./home.ejs"><img src="/images/arrow-left.svg" alt="">Volver al listado</a>
+            <a href="./"><img src="/images/arrow-left.svg" alt="">Volver al listado</a>
         <p><img src="/images/chevron-right.svg" alt="">Bebidas</p>
         </div>
         <section class="main-product__product">
@@ -73,15 +73,11 @@
             <%- include('../partials/product-card') %>
             <%- include('../partials/product-card') %>
         </section>
-
-        <section class="main-product__list">
-            
-        </section>
+        <%- include('../partials/categories') %>
+        
     </main>
 
 
-    <footer>
-        <h2>footer</h2>
-    </footer>
+    <%- include('../partials/footer') %>
 </body>
 </html>
