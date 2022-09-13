@@ -1,6 +1,7 @@
 /* Navegación categorias de productos */
 .nav-products{
-    width: 385px;
+    width: 100%;
+    max-width: 385px;
     height: 285px;
     background-color: #333333;
     margin: 24px 16px 0;

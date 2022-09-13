@@ -9,7 +9,8 @@
 }
 
 .product-hero{
-    width: 385px;
+    width: 100%;
+    max-width: 385px;
     height: 195px;
     background-repeat: no-repeat;
     background-size: cover;
