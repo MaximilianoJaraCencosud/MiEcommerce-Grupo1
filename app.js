@@ -13,7 +13,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, resp) => {
-  resp.render("pages/home");
+  resp.render("pages/home", {products: products});
 });
 
 app.get("/register", (req, resp) => {

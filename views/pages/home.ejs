@@ -68,79 +68,22 @@
         </section>
 
         <!-- Sección Productos de Interes -->
-        <section class="section-interes container">
+        <section class="section-interes">
             <h2 class="section-title">Te puede interesar</h2>
+            
 
-            <div class="cards-container">
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-    
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-    
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+            <div class="container">
+                <div class="main-product__related-product">
 
+                    <% for(let i=0; i < 4; i++) { %>
+                        <a href="/products">
+                            <%- include('../partials/product-card', {product: products[i]}) %>
+                        </a>
+                    <% } %>
+    
+                </div>
             </div>
+
 
         </section>
 
@@ -148,143 +91,13 @@
         <section class="section-masPedidos container">
             <h2 class="section-title">Los más pedidos</h2>
 
-            <div class="cards-container">
+            <div class="main-product__related-product">
 
-                <a href="/products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-    
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-    
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-    
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-    
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-    
-                <a href="products">
-                    <div class="product-card">
-                        <div class="product-card__img">
-                            <img src="" alt="">
-                        </div>
-                        <div class="product-card__description">
-                            <div class="product-card__description__header">
-                                <h3>Nombre del producto o servicio</h3>
-                            </div>
-                            <div class="product-card__description__points">
-                                <p>XX.XXX</p>
-                                <p>Puntos</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                <% for(let i=0; i < 4; i++) { %>
+                    <a href="/products">
+                        <%- include('../partials/product-card', {product: products[i]}) %>
+                    </a>
+                <% } %>
                 
             </div>
 
@@ -297,9 +110,9 @@
 
     </main>
 
-    <footer>
-        <h3>Aqui va el componente footer</h3>
-    </footer>
+
+        <%- include('../partials/footer') %>
+
 
 </body>
 </html>
