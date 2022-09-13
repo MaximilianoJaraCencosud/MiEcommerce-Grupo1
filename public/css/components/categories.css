@@ -27,6 +27,7 @@
         width: 80%;
         max-width: 1024px;
         height: 128px;
+        margin-top: 64px;
     }
 
     .nav-products__list{
