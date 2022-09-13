@@ -1,1 +1,75 @@
-@import url(../components/mainRegister.css);
+
+.register-main{
+    position: relative;
+    padding: 48px;
+  }
+
+  .color-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    background-color: #0cb093;
+    width: 100%;
+    height: 264px;
+  }
+  
+  .contenedor-registro {
+    position: relative;
+    z-index: 1; 
+    max-width: 320px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 126px;
+  }
+  
+  .contenedor-registro p {
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+  .contenedor-registro__inputs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    height: 344px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    padding: 0 32px;
+  }
+
+  .form-register{
+    display: grid;
+    gap: 16px;
+  }
+  
+  .contenedor-registro__inputs input {
+    width: 100%;
+    height: 32px;
+    border-radius: 16px;
+    border: 1px solid #00000080;
+    font-size: 12px;
+    padding-left: 16px;
+  }
+  
+  .contenedor-registro__titulo {
+    margin: 48px 0 32px;
+    height: 48px;
+    font-size: 32px;
+    font-family: Open Sans;
+    font-weight: 400;
+    text-align: left;
+  }
+  
+  .btn-CrearCuenta {
+    background-color: #494f51;
+    color: #ffffff;
+    border: none;
+    font-size: 12px;
+    width: 100%;
+    height: 32px;
+    border-radius: 16px;
+    font-weight:400;
+  }
