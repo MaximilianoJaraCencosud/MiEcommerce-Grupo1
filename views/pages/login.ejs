@@ -5,28 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-
-     <%- include('../partials/header') %>
+    <%- include('../partials/header') %>
     <main class="login-main">
+      <div class="color-fondo"></div>
       <div class="contenedor-login">
         <div class="contenedor-login__inputs">
           <h2 class="contenedor-login__titulo">¡Hola!</h2>
           <form class="form-login" action="" method="POST">
-          <input type="text" placeholder="Tu nombre de usuario" />
-          <input type="text" placeholder="Tu contraseña" />
-          <button class="btn-iniciarSesion" value="Iniciar Sesión">
-            Iniciar Sesión
-          </button>
-        </form>
+            <input type="text" placeholder="Tu nombre de usuario" />
+            <input type="text" placeholder="Tu contraseña" />
+            <button class="btn-iniciarSesion" value="Iniciar Sesión">
+              Iniciar Sesión
+            </button>
+          </form>
         </div>
         <p class="texto-iniciaSesion" for="">
           ¿No tienes cuenta? <a href="register">Regístrate </a>
         </p>
       </div>
     </main>
+
     <%- include('../partials/footer') %>
   </body>
 </html>
