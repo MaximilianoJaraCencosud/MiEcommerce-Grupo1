@@ -125,7 +125,7 @@ h3{
 
 .main-product__btn input{
     background-color: #494F51;
-    width: 95%;
+    /* width: 95%; */
     border: none;
     /* height: 32px; */
     color: white;
@@ -136,14 +136,14 @@ h3{
 /* PRODUCTOS RELACIONADOS */
 .main-product__related-products-title{
     display: flex;
-    width: 95%;
+    /* width: 95%; */
     justify-content: start;
     margin-top: 30px;
 }
 
 
 .main-product__related-product{
-    width: 95%;
+    width: 100%;
     max-width: 500;
     font-family: 'Open Sans', sans-serif;
     
@@ -159,7 +159,7 @@ h3{
 
 /* CONTENEDOR */
 .main-product__related-product{
-    width: 95%;
+    /* width: 95%; */
     max-width: 500;
     font-family: 'Open Sans', sans-serif;
 }
@@ -176,14 +176,14 @@ h3{
         flex-wrap: wrap;
         justify-content: space-between;
         /* gap: 10px; */
-        width: 95%;
+        /* width: 95%; */
     }
 
     /* CARD */
     .main-product__product{
         flex-direction: row;
         flex-wrap: wrap;
-        width: 95%;
+        /* width: 95%; */
         align-items: stretch;
     }
 
