@@ -1,18 +1,19 @@
 
 .site-headersearch {
     background-color: rgba(255, 255, 255, 0.5); 
-    padding: 10px;
 }
 .headersearch{
+    padding: 10px;
     height: 64px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 .img-MiEcommerce{
     display: none;
 }
 .site-headerseach-search{
-    
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 16px;
     height: 32px;
@@ -32,29 +33,24 @@
     display: none;
 }
 
- /* .contorno-foto{
-    max-width: 40px;
-    max-height: 40px;
-    background-color:rgba(73, 79, 81, 1);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}  */
-
  @media (min-width: 800px){
     .img-MiEcommerce{
         display:flex;
+        margin-right: 8px;
 }
+
  .img-MiE{
     display: none ;
 }
+
  .img-profileBtn{
     display:flex;
     width: 78px;
     height: 32px;
  }
+
  .img-profilePic{
     display:none
  }
+
 } 

@@ -49,17 +49,6 @@
   align-items: center;
 }
 
-.cart__product-card__btn {
-  border-radius: 16px;
-  padding: 10px 20px 10px 20px;
-  font-size: 12px;
-  background-color: #494f51;
-  color: white;
-  border: none;
-  height: 32px;
-  width: 76;
-}
-
 .cart__product-card__price {
   font-size: 24px;
   font-weight: bold;
