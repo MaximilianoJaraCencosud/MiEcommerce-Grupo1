@@ -200,7 +200,7 @@ h3{
     .main-product_info{
         display: flex;
         flex-direction: column;
-        width: 27%;
+        width: 29%;
         /* align-self: flex-start; */
         border: solid 1px #CCCCCC;
         margin-top: 8px;
