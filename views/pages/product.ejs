@@ -50,13 +50,13 @@
         <div class="main-product__related-products-title">
             <h3>También te puede interesar</h3>
         </div>
-        <div class="container-product_section">
-        <section class="main-product__related-product">
+        <!-- <div class="container-product_section"> -->
+        <section class="main-product__related-product related-product-padding">
             <% for(let i=0; i < 4; i++) { %>   
                 <%- include('../partials/product-card', {product: products[i]}) %>
             <% } %>
         </section>
-        </div>
+        <!-- </div> -->
         <%- include('../partials/categories') %>
         
     </main>
