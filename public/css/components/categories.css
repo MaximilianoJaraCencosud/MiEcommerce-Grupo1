@@ -6,7 +6,6 @@
     background-color: #333333;
     margin: 24px 16px 0;
     border-radius: 16px;
-    padding: 5px;
 }
 
 .nav-products__list{
@@ -41,6 +40,7 @@
     .nav-products a{
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         height: 100%;
     }
 

@@ -33,4 +33,11 @@ li{
 
 .layout-container{
 flex-grow: 1;
+padding-bottom: 25px;
+}
+
+@media (min-width: 811px){
+    .layout-container{
+        padding-bottom: 48px;
+    }
 }
