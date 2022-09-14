@@ -31,7 +31,8 @@ Express quedará escuchando en el puerto: 8080
 
 <br>
 <br>
-### Equipo de desarrollo :computer:
+
+###Equipo de desarrollo :computer:
 
 - Maximiliano Jara
 - Agustin Alonso
