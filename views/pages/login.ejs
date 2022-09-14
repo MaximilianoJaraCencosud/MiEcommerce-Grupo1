@@ -1,19 +1,17 @@
 <%- include('../partials/head', {variable : "Login | MiEcommerce"}) %>    <%- include('../partials/header') %>
-    <main class="login-main">
+    <main class="contenedor-main">
       <div class="color-fondo"></div>
-      <div class="contenedor-login">
-        <div class="contenedor-login__inputs">
-          <h2 class="contenedor-login__titulo">¡Hola!</h2>
-          <form class="form-login" action="" method="POST">
-            <input type="text" placeholder="Tu nombre de usuario" />
-            <input type="text" placeholder="Tu contraseña" />
-            <button class="btn-iniciarSesion" value="Iniciar Sesión">
-              Iniciar Sesión
-            </button>
+      <div class="contenedor-form">
+        <div class="contenedor-form__inputs">
+          <h2 class="contenedor-form__titulo ">¡Hola!</h2>
+          <form class="formulario" action="" method="POST">
+            <%- include('../partials/input',{type: 'text', placeholder: 'Tu nombre de usuario' }) %>
+            <%- include('../partials/input',{type: 'password', placeholder: 'Tu contraseña' }) %>
+            <%- include('../partials/button',{text: 'Iniciar Sesión'}) %>
           </form>
         </div>
-        <p class="texto-iniciaSesion" for="">
-          ¿No tienes cuenta? <a href="register">Regístrate </a>
+        <p class="texto-form" for="">
+          ¿No tienes cuenta? <a class="link-view" href="register">Regístrate</a>
         </p>
       </div>
     </main>

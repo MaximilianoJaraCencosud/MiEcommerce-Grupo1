@@ -15,7 +15,7 @@
                         </h3>
                     </div>
                     <div class="cart__product-card__actions">
-                        <button class="cart__product-card__btn">Quitar</button>
+                        <%- include('../partials/button',{text: 'Quitar'}) %>
                         <div class="cart__product-card__action-amount"><button>-</button>
                             <p>1</p><button>+</button>
                         </div>
@@ -32,7 +32,7 @@
             <p class="cart__total__price">111111</p>
         </section>
         <section class="cart__pay">
-            <button class="cart__product-card__btn">Ir a Pagar</button>
+            <%- include('../partials/button',{text: 'Ir a Pagar'}) %>
         </section>
     </main>
     <%- include('../partials/footer') %>
