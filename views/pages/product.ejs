@@ -9,7 +9,7 @@
         <p><img src="/images/chevron-right.svg" alt="Imagen del producto">Bebidas</p>
         </div>
 
-
+        <!-- Importamos la tarjeta principal -->
         <%- include('../partials/main-product') %>
 
 
@@ -17,13 +17,17 @@
         <div class="main-product__related-products-title">
             <h3>También te puede interesar</h3>
         </div>
-        <!-- <div class="container-product_section"> -->
+
+
+        <!-- Importamos 4 tarjetas de productos relacionados -->
         <section class="main-product__related-product related-product-padding">
             <% for(let i=0; i < 4; i++) { %>   
                 <%- include('../partials/product-card', {product: products[i]}) %>
             <% } %>
         </section>
-        <!-- </div> -->
+
+
+        <!-- Importamos menú categorías-->
         <%- include('../partials/categories') %>
         
     </main>
