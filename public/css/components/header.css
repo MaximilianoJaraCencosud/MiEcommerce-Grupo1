@@ -1,12 +1,11 @@
-
 .site-header {
-    background-color: #FFFFFF40; 
-    padding: 10px;
-    /* border-bottom: 1px solid black; */
+  background-color: #ffffff40;
+  padding: 10px;
+  /* border-bottom: 1px solid black; */
 }
-.header{
-    height: 64px;
-    display: flex;
-    align-items: flex-start;
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.5); */
+.header {
+  height: 64px;
+  display: flex;
+  align-items: flex-start;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.5); */
 }

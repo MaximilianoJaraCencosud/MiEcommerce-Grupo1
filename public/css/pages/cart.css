@@ -1,5 +1,3 @@
-
-
 .cart {
   padding: 16px;
 }
@@ -75,6 +73,7 @@
 
 .cart__total {
   margin-top: 27px;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
@@ -98,13 +97,13 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .cart {
-      padding: 16px 128px 16px 128px;
-    }
+  .cart {
+    padding: 16px 128px 16px 128px;
+  }
 
-   .cart__product-card{
+  .cart__product-card {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   }
   }
+}

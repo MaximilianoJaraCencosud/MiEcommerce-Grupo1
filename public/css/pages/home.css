@@ -1,75 +1,67 @@
-
-
-.main-home{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.main-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
 
 /* Linea Verde parte superior de la página */
-.bg-green{
-    background-color: #0CB093;
-    height: 270px;
-    width: 100%;
-    min-width: 360px;
-    position: absolute;
-    top: 464px;
-    left: 0;
-    z-index: -1;
+.bg-green {
+  background-color: #0cb093;
+  height: 270px;
+  width: 100%;
+  min-width: 360px;
+  position: absolute;
+  top: 464px;
+  left: 0;
+  z-index: -1;
 }
 
-@media (min-width: 811px){
-    .bg-green{
-        height: 256px;
-        top: 336px;
-    }
-
+@media (min-width: 811px) {
+  .bg-green {
+    height: 256px;
+    top: 336px;
+  }
 }
 
-.container-home{
-    /* width: 100%; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container-home {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* Sección productos de interes */
 
-.seccion-interes{
+.seccion-interes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.container-product_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  max-width: 382px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 400;
+  align-self: flex-start;
+}
+
+@media (min-width: 811px) {
+  .section-title {
+    margin-top: 72px;
+  }
+
+  .container-product_section {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
     flex-wrap: wrap;
-}
-
-.container-product_section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 95%;
-    max-width: 382px;
+    max-width: 1075px;
+  }
 }
-
-
-
-.section-title{
-    font-size: 24px;
-    font-weight: 400;
-    align-self: flex-start;
-}
-
-
-@media (min-width: 811px){
-    .section-title{
-        margin-top: 72px;
-    }
-
-    .container-product_section{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 95%;
-        max-width: 1075px;
-    }
-}
-

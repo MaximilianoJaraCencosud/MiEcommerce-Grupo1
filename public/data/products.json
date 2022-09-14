@@ -47,9 +47,7 @@
     },
     "stock": 36,
     "category": "smartphones",
-    "images": [
-      "https://dummyjson.com/image/i/products/3/1.jpg"
-    ]
+    "images": ["https://dummyjson.com/image/i/products/3/1.jpg"]
   },
   {
     "id": 4,
