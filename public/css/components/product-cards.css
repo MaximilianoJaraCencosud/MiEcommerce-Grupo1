@@ -24,7 +24,7 @@
 .section-article__desc {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   padding: 8px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .section-article__price {
-  padding-left: 8px;
+  
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -65,8 +65,13 @@
 
   .section-article__desc {
     flex-direction: row;
+    justify-content: space-around;
     padding: 8px;
     align-content: flex-start;
+  }
+
+  .section-article__price{
+    padding-left: 8px;
   }
 
   .section-article__price:first-child {
