@@ -1,12 +1,12 @@
 <%- include('../partials/head', {variable : "Products | MiEcommerce"}) %> <%-
-include('../partials/headersearch') %>
+include('../partials/header') %>
 
-<main class="main-products">
-  <div class="volver">
-    <a href="./"
-      ><img src="/images/arrow-left.svg" alt="Flecha volver al listado" />Volver
-      al listado</a
-    >
+<main class="product">
+  <div class="product__action-return">
+    <a href="./">
+      <img src="/images/arrow-left.svg" alt="Flecha volver al listado" />
+      Volver al listado
+    </a>
     <p>
       <img src="/images/chevron-right.svg" alt="Imagen del producto" />Bebidas
     </p>
@@ -15,15 +15,17 @@ include('../partials/headersearch') %>
   <!-- Importamos la tarjeta principal -->
   <%- include('../partials/main-product') %>
 
-  <div class="main-product__related-products-title">
-    <h3>También te puede interesar</h3>
-  </div>
+  <div class="home__section-products">
+    <h2 class="home__section-products__title">Tambien te puede interesar</h2>
 
-  <!-- Importamos 4 tarjetas de productos relacionados -->
-  <section class="main-product__related-product related-product-padding">
-    <% for(let i=0; i < 4; i++) { %> <%- include('../partials/product-card',
-    {product: products[i]}) %> <% } %>
-  </section>
+    <div class="main-product__related-product">
+      <% for(let i=0; i < 4; i++) { %>
+      <a href="/products">
+        <%- include('../partials/product-card', {product: products[i]}) %>
+      </a>
+      <% } %>
+    </div>
+  </div>
 
   <!-- Importamos menú categorías-->
   <%- include('../partials/categories') %>
