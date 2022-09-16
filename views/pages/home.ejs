@@ -3,12 +3,12 @@
 <%- include('../partials/head', {variable : "Home | MiEcommerce"}) %>
 
 <!-- Importación del Header -->
-<%- include('../partials/headersearch') %>
+<%- include('../partials/header') %>
 
-<main class="main-home">
-  <div class="container-home">
+<main class="home">
+  <div class="home__container">
     <!-- Seccion verde de background -->
-    <div class="bg-green"></div>
+    <div class="home__bg-green"></div>
 
     <!-- Importación de menú de categorias -->
     <%- include('../partials/categories') %>
@@ -17,30 +17,31 @@
     <%- include('../partials/product-hero') %>
 
     <!-- Sección Productos de Interes -->
-    <div class="container-product_section">
-      <h2 class="section-title">Te puede interesar</h2>
-
-      <div class="main-product__related-product">
-        <% for(let i=0; i < 4; i++) { %>
-        <a href="/products">
-          <%- include('../partials/product-card', {product: products[i]}) %>
-        </a>
-        <% } %>
+ 
+      <div class="home__section-products">
+        <h2 class="home__section-products__title">Te puede interesar</h2>
+  
+        <div class="main-product__related-product">
+          <% for(let i=0; i < 4; i++) { %>
+          <a href="/products">
+            <%- include('../partials/product-card', {product: products[i]}) %>
+          </a>
+          <% } %>
+        </div>
       </div>
-    </div>
-
-    <!-- Sección Más pedidos -->
-    <div class="container-product_section">
-      <h2 class="section-title">Los más pedidos</h2>
-
-      <div class="main-product__related-product">
-        <% for(let i=0; i < 4; i++) { %>
-        <a href="/products">
-          <%- include('../partials/product-card', {product: products[i]}) %>
-        </a>
-        <% } %>
+  
+      <!-- Sección Más pedidos -->
+      <div class="home__section-products">
+        <h2 class="home__section-products__title">Los más pedidos</h2>    
+          <div class="main-product__related-product">
+            <% for(let i=0; i < 5; i++) { %>
+            <a href="/products">
+              <%- include('../partials/product-card', {product: products[i]}) %>
+            </a>
+            <% } %>
+          </div>
       </div>
-    </div>
+  
 
     <!-- Importación de menú de categorias -->
     <%- include('../partials/categories') %>

@@ -1,5 +1,5 @@
 /* Navegación categorias de productos */
-.nav-products {
+.categories {
   width: 100%;
   max-width: 385px;
   height: 285px;
@@ -8,14 +8,14 @@
   border-radius: 16px;
 }
 
-.nav-products__list {
+.categories__list {
   display: flex;
   flex-direction: column;
   padding: 16px 24px;
   gap: 4px;
 }
 
-.nav-products a {
+.categories a {
   display: flex;
   align-content: center;
   font-size: 16px;
@@ -24,28 +24,34 @@
 }
 
 @media (min-width: 811px) {
-  .nav-products {
-    width: 80%;
+  .categories {
     max-width: 1024px;
     height: 128px;
-    margin-top: 64px;
+    margin-top: 48px;
   }
 
-  .nav-products__list {
+  .categories__list {
     height: 100%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
-  .nav-products a {
+  .categories a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
   }
 
-  .nav-products a img {
+  .categories a img {
     width: 40px;
     height: 40px;
+  }
+
+  .categories__list span{
+    background-color: aliceblue;
+    width: 1px;
+    height: 80%;
   }
 }
