@@ -58,6 +58,7 @@
 
 .product-hero__img {
   padding: 8px;
+  z-index: 11;
 }
 
 .product-hero__legend {
@@ -111,5 +112,8 @@
 @media (min-width: 1024px) {
   .product-hero {
     width: 504px;
+    min-width: 504px;
   }
+
+
 }
