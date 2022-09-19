@@ -12,12 +12,17 @@ include('../partials/header', {variable_search: true}) %>
     </p>
   </div>
 
-  <!-- Importamos la tarjeta principal -->
-  <%- include('../partials/main-product', {product: product}) %>
-
-  <div class="home__section-products">
-    <%- include('../partials/interest-products', {productsSortedByRate}) %>
-  </div>
+  <% if(product!=null) {%> <%- include('../partials/main-product', {product:
+  product}) %>
+    <div class="home__section-products">
+      <%- include('../partials/interest-products', {products: productsSortedByCategory, title: "También te puede interesar", count: 4}) %>
+    </div>
+  <% }else{ %>
+    <h2>No encontrado</h2>
+    <div class="home__section-products">
+      <%- include('../partials/interest-products', {products: productsByRate, title: "Quizás te pueda interesar", count: 4}) %>
+    </div>
+  <% } %>
 
   <!-- Importamos menú categorías-->
   <%- include('../partials/categories') %>
