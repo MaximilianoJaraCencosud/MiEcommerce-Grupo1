@@ -1,9 +1,29 @@
 // Product controller
-let products = require("../../public/data/products.json");
+const fetch = require("node-fetch");
+let products = [];
+
+fetch("http://localhost:8000/api/product")
+  .then((res) => {
+    return res.json();
+  })
+  .then((res) => {
+    products = res;
+  });
 
 const controller = {
   home: (req, resp) => {
-    resp.render("home", { products: products });
+    let productsSortedByRate = [...products];
+    productsSortedByRate.sort((a, b) => {
+      return b.rating.rate - a.rating.rate;
+    });
+    let productsSortedByCount = [...products];
+    productsSortedByCount.sort((a, b) => {
+      return b.rating.count - a.rating.count;
+    });
+    resp.render("home", {
+      productsSortedByRate: productsSortedByRate,
+      productsSortedByCount: productsSortedByCount,
+    });
   },
   register: (req, resp) => {
     resp.render("register");
@@ -17,7 +37,10 @@ const controller = {
     });
   },
   product: (req, resp) => {
+    let id = req.params.id;
+    let product = products.find((p) => p.id == id);
     resp.render("product", {
+      product: product,
       products: products,
     });
   },
@@ -25,7 +48,7 @@ const controller = {
     resp.render("checkout");
   },
   error404: (req, resp) => {
-    resp.render("404");
+    resp.status(404).render("404");
   },
 };
 
