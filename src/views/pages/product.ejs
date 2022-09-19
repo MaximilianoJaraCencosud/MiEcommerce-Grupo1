@@ -16,15 +16,7 @@ include('../partials/header', {variable_search: true}) %>
   <%- include('../partials/main-product', {product: product}) %>
 
   <div class="home__section-products">
-    <h2 class="home__section-products__title">Tambien te puede interesar</h2>
-
-      <div class="main-product__related-product">
-        <% for(let i=0; i < 4; i++) { %>
-        <a href="/products/<%= productsSortedByRate[i].id %>">
-          <%- include('../partials/product-card', {product: productsSortedByRate[i]}) %>
-        </a>
-        <% } %>
-      </div>
+    <%- include('../partials/interest-products', {productsSortedByRate}) %>
   </div>
 
   <!-- Importamos menú categorías-->

@@ -1,0 +1,21 @@
+[
+    {
+        "title": "50% OFF en Combo Plus",
+        "text": "Canjenado 50.000 puntos MiEcommerce",
+        "img": "/images/disneybrand.png",
+        "alt": "Imagen de fondo de Disney+"
+    },
+    {
+        "title": "Nombre de la Promo",
+        "text": "Detalles que pueden ocupar hasta dos lineas",
+        "img": "/images/rectangle-2.png",
+        "alt": "Imagen de fondo generico"
+    },
+    {
+        "title": "50% OFF en HBO Max",
+        "text": "Canjeando 50.000 puntos MiEcommerce",
+        "img": "/images/hbobrand.png",
+        "alt": "Imagen de fondo HBO"
+    } 
+]
+
