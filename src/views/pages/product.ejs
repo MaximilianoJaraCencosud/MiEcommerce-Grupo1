@@ -3,7 +3,7 @@ include('../partials/header') %>
 
 <main class="product">
   <div class="product__action-return">
-    <a href="./">
+    <a href="/">
       <img src="/images/arrow-left.svg" alt="Flecha volver al listado" />
       Volver al listado
     </a>
@@ -18,12 +18,14 @@ include('../partials/header') %>
   <div class="home__section-products">
     <h2 class="home__section-products__title">Tambien te puede interesar</h2>
 
-    <div class="main-product__related-product">
-      <% for(let i=0; i < 4; i++) { %>
-      <a href="/products">
-        <%- include('../partials/product-card', {product: products[i]}) %>
-      </a>
-      <% } %>
+      <div class="main-product__related-product">
+        <% for(let i=0; i < 4; i++) { %>
+        <a href="/products/<%= productsSortedByRate[i].id %>">
+          <%- include('../partials/product-card', {product: productsSortedByRate[i]}) %>
+        </a>
+        <% } %>
+      </div>
+
     </div>
   </div>
 
