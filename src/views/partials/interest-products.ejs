@@ -1,0 +1,11 @@
+<div class="main-product__related-product">
+    <h2 class="home__section-products__title">Te puede interesar</h2>
+
+    <div class="main-product__related-product">
+        <% for(let i=0; i < 4; i++) { %>
+        <a href="/products/<%= productsSortedByRate[i].id %>">
+            <%- include('../partials/product-card', {product: productsSortedByRate[i]}) %>
+        </a>
+        <% } %>
+    </div>
+</div>
