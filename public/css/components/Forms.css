@@ -1,10 +1,10 @@
-.contenedor-main {
+.access {
   position: relative;
   padding: 48px;
   min-width: 360px;
 }
 
-.color-fondo {
+.access__bg-green {
   position: absolute;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@
   height: 264px;
 }
 
-.contenedor-form {
+.access__container {
   position: relative;
   z-index: 1;
   max-width: 320px;
@@ -22,7 +22,7 @@
   margin-bottom: 126px;
 }
 
-.contenedor-form__inputs {
+.access__card {
   display: flex;
   flex-direction: column;
   max-width: 320px;
@@ -32,23 +32,23 @@
   padding: 48px 32px;
 }
 
-.contenedor-form__titulo {
+.access__card__title {
   margin-bottom: 32px;
   font-size: 32px;
   font-weight: 400;
   text-align: left;
 }
 
-.formulario {
+.access__card__form {
   display: grid;
   gap: 16px;
 }
 
-.texto-form {
+.access__text {
   text-align: center;
   margin-top: 16px;
 }
 
-.link-view {
+.access__text__link {
   text-decoration: underline;
 }

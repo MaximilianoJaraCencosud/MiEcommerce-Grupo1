@@ -1,38 +1,27 @@
-const { response } = require("express");
 const express = require("express");
 const app = express();
-const path = require("path");
+const route = require("./src/routes/productRoute");
+
 const port = 8080;
-let products = require('./public/data/products.json')
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.set("views", "src/views/pages");
 
 app.listen(port, () => {
   console.log("listening on port " + port);
 });
 
-app.get("/", (req, resp) => {
-  resp.render("pages/home", {products: products});
-});
+app.use("/", route);
 
-app.get("/register", (req, resp) => {
-  resp.render("pages/register");
-});
+app.use("/register", route);
 
-app.get("/login", (req, resp) => {
-  resp.render("pages/login");
-});
+app.use("/login", route);
 
-app.get("/cart", (req, resp) => {
-    resp.render("pages/cart" ,{
-      products : products
-    });
-  });
+app.use("/cart", route);
 
-  app.get("/products", (req, resp) => {
-    resp.render("pages/product" ,{
-      products : products
-    });
-  });
-  
+app.use("/products/:id", route);
+
+app.use("/checkout", route);
+
+app.use('*', route);

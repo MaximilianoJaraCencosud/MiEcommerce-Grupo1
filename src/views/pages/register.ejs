@@ -1,0 +1,21 @@
+<%- include('../partials/head', {variable : "Register | MiEcommerce"}) %> 
+<%-include('../partials/header', {variable_search: false}) %>
+<main class="access">
+  <div class="access__bg-green"></div>
+  <div class="access__container">
+    <div class="access__card">
+      <h2 class="access__card__title">¡Registrate!</h2>
+      <form class="access__card__form" action="" method="POST">
+        <%- include('../partials/input',{type: 'email', placeholder: 'Tu email'
+        }) %> <%- include('../partials/input',{type: 'password', placeholder:
+        'Tu nueva contraseña' }) %> <%- include('../partials/input',{type:
+        'password', placeholder: 'Repite tu contraseña' }) %> <%-
+        include('../partials/button',{text: 'Crear Cuenta'}) %>
+      </form>
+    </div>
+    <p class="access__text" for="">
+      ¿Ya tienes cuenta? <a class="access__text__link" href="login">Inicia Sesión</a>
+    </p>
+  </div>
+</main>
+<%- include('../partials/footer') %>

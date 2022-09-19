@@ -85,6 +85,7 @@
   .section-hero {
     display: flex;
     flex-direction: row;
+    margin-top: 56px;
   }
 
   .product-hero {
@@ -114,6 +115,4 @@
     width: 504px;
     min-width: 504px;
   }
-
-
 }

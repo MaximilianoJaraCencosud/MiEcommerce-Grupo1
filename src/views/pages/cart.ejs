@@ -1,5 +1,5 @@
-<%- include('../partials/head', {variable : "Cart | MiEcommerce"}) %> <%-
-include('../partials/headersearch') %>
+<%- include('../partials/head', {variable : "Cart | MiEcommerce"}) %> 
+<%-include('../partials/header', {variable_search: true}) %>
 <main class="cart">
   <a href="/" class="cart__return">
     <img src="images/arrow-left.svg" alt="Boton de regreso" />
@@ -34,7 +34,7 @@ include('../partials/headersearch') %>
     <p class="cart__total__price">2977</p>
   </section>
   <section class="cart__pay">
-    <%- include('../partials/button',{text: 'Ir a Pagar'}) %>
+    <a href="/checkout"><%- include('../partials/button',{text: 'Ir a Pagar'}) %></a>
   </section>
 </main>
 <%- include('../partials/footer') %>

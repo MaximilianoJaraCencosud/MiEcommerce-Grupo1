@@ -1,0 +1,34 @@
+<%- include('../partials/head', {variable : "Products | MiEcommerce"}) %> <%-
+include('../partials/header', {variable_search: true}) %>
+
+<main class="product">
+  <div class="product__action-return">
+    <a href="/">
+      <img src="/images/arrow-left.svg" alt="Flecha volver al listado" />
+      Volver al listado
+    </a>
+    <p>
+      <img src="/images/chevron-right.svg" alt="Imagen del producto" />Bebidas
+    </p>
+  </div>
+
+  <!-- Importamos la tarjeta principal -->
+  <%- include('../partials/main-product', {product: product}) %>
+
+  <div class="home__section-products">
+    <h2 class="home__section-products__title">Tambien te puede interesar</h2>
+
+      <div class="main-product__related-product">
+        <% for(let i=0; i < 4; i++) { %>
+        <a href="/products/<%= productsSortedByRate[i].id %>">
+          <%- include('../partials/product-card', {product: productsSortedByRate[i]}) %>
+        </a>
+        <% } %>
+      </div>
+  </div>
+
+  <!-- Importamos menú categorías-->
+  <%- include('../partials/categories') %>
+</main>
+
+<%- include('../partials/footer') %>

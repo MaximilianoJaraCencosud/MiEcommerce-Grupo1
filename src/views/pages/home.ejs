@@ -1,0 +1,53 @@
+<!-- Home -->
+
+<%- include('../partials/head', {variable : "Home | MiEcommerce"}) %>
+
+<!-- Importación del Header -->
+<%-include('../partials/header', {variable_search: true}) %>
+
+<main class="home">
+  <div class="home__container">
+    <!-- Seccion verde de background -->
+    <div class="home__bg-green"></div>
+
+    <!-- Importación de menú de categorias -->
+    <%- include('../partials/categories') %>
+
+    <!-- Sección Card Hero -->
+    <%- include('../partials/product-hero') %>
+
+    <!-- Sección Productos de Interes -->
+ 
+      <div class="home__section-products">
+        <h2 class="home__section-products__title">Te puede interesar</h2>
+  
+        <div class="main-product__related-product">
+          <% for(let i=0; i < 4; i++) { %>
+          <a href="/products/<%= productsSortedByRate[i].id %>">
+            <%- include('../partials/product-card', {product: productsSortedByRate[i]}) %>
+          </a>
+          <% } %>
+        </div>
+      </div>
+  
+      <!-- Sección Más pedidos -->
+      <div class="home__section-products">
+        <h2 class="home__section-products__title">Los más pedidos</h2>    
+          <div class="main-product__related-product">
+            <% for(let i=0; i < 8; i++) { %>
+            <a href="/products/<%= productsSortedByCount[i].id %>">
+              <%- include('../partials/product-card', {product: productsSortedByCount[i]}) %>
+            </a>
+            <% } %>
+          </div>
+      </div>
+  
+
+    <!-- Importación de menú de categorias -->
+    <%- include('../partials/categories') %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+
+

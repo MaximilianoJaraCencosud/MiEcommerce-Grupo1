@@ -1,0 +1,42 @@
+<section class="main-product__product">
+  <div class="main-product__product-title">
+    <h3>
+      <%= product.title %>
+    </h3>
+  </div>
+  <div class="main-product__image">
+    <div class="main-product__image-container">
+      
+      <img src= <% if(product.images.length == 0) {%>
+          "/images/no-image.jpeg" 
+        <%} else{ %>
+          "<%= product.images[0] %>" 
+        <% }%>
+        alt="Imagen de <%= product.title %>" srcset="" class="imagenPrincipal" />
+    </div>
+    <div class="main-product__miniaturas">
+      <%product.images.map(img=> {%>
+        <img src="<%= img %>" alt="Miniatura" />
+        <% }) %>
+    </div>
+  </div>
+  <div class="main-product_info">
+    <div class="main-product__product-title-alternative">
+      <h3>
+        <%= product.title %>
+      </h3>
+    </div>
+    <div class="main-product__price">
+      <h3>
+        <%= product.price %>
+      </h3>
+      <p>PUNTOS</p>
+    </div>
+    <div class="main-product__desc">
+      <p>
+        <%= product.description %>
+      </p>
+    </div>
+    <input type="button" class="main-product__btn" value="Agragar al Carrito" />
+  </div>
+</section>
