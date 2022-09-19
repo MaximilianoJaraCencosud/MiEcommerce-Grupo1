@@ -6,7 +6,13 @@
   </div>
   <div class="main-product__image">
     <div class="main-product__image-container">
-      <img src="<%= product.images[0] %>" alt="Imagen principal" srcset="" class="imagenPrincipal" />
+      
+      <img src= <% if(product.images.length == 0) {%>
+          "/images/no-image.jpeg" 
+        <%} else{ %>
+          "<%= product.images[0] %>" 
+        <% }%>
+        alt="Imagen de <%= product.title %>" srcset="" class="imagenPrincipal" />
     </div>
     <div class="main-product__miniaturas">
       <%product.images.map(img=> {%>
