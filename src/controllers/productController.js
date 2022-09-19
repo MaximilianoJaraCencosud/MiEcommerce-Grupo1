@@ -1,9 +1,41 @@
 // Product controller
-let products = require("../../public/data/products.json");
+const fetch = require("node-fetch");
+let products = [];
+
+fetch("http://localhost:8000/api/product")
+  .then((res) => {
+    return res.json();
+  })
+  .then((res) => {
+    products = res;
+  });
+
+  // Función que retorna array con lista de productos ordenados por rate desc
+  const getProductsByRate = ()=>{
+    let productsSortedByRate = [...products];
+    productsSortedByRate.sort((a, b) => {
+      return b.rating.rate - a.rating.rate;
+    });
+    return productsSortedByRate;
+  }
+
+  // Función que retorna array con lista de productos ordenados por count desc
+  const getProductsByCount = ()=>{
+    let productsSortedByCount = [...products];
+    productsSortedByCount.sort((a, b) => {
+      return b.rating.count - a.rating.count;
+    });
+    return productsSortedByCount;
+  }
 
 const controller = {
   home: (req, resp) => {
-    resp.render("home", { products: products });
+    const prByRate = getProductsByRate();
+    const prByCount = getProductsByCount();
+    resp.render("home", {
+      productsSortedByRate: prByRate,
+      productsSortedByCount: prByCount,
+    });
   },
   register: (req, resp) => {
     resp.render("register");
@@ -17,15 +49,19 @@ const controller = {
     });
   },
   product: (req, resp) => {
+    let id = req.params.id;
+    let product = products.find((p) => p.id == id);
+    const prByRate = getProductsByRate();
     resp.render("product", {
-      products: products,
+      product: product,
+      productsSortedByRate: prByRate,
     });
   },
   checkout: (req, resp) => {
     resp.render("checkout");
   },
   error404: (req, resp) => {
-    resp.render("404");
+    resp.status(404).render("404");
   },
 };
 

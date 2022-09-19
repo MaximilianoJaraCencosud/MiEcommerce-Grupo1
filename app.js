@@ -20,10 +20,8 @@ app.use("/login", route);
 
 app.use("/cart", route);
 
-app.use("/products", route);
+app.use("/products/:id", route);
 
 app.use("/checkout", route);
 
-app.use((req, res) => {
-  res.status(404).render("404");
-});
+app.use('*', route);
