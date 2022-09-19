@@ -1,0 +1,13 @@
+.main-404{
+    background-image: url('../../images/error-404.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    text-align: center;
+}
+
+
+.main-404 button{
+    /* text-align: center; */
+    margin-top: 450px;
+}
