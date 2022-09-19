@@ -14,24 +14,19 @@
     <%- include('../partials/categories') %>
 
     <!-- Sección Card Hero -->
-    <%- include('../partials/product-hero') %>
-
+    <section class="section-hero">
+      <% for(let i=0; i<3; i++){ %>
+        <%- include('../partials/product-hero', { hero: hero[i] }) %>
+      <% } %>
+    </section>
     <!-- Sección Productos de Interes -->
- 
       <div class="home__section-products">
-  
         <%- include('../partials/interest-products', {productsSortedByRate}) %>
-  
-      <!-- Sección Más pedidos -->
+      </div>
+
+    <!-- Sección Productos más pedidos -->
       <div class="home__section-products">
-        <h2 class="home__section-products__title">Los más pedidos</h2>    
-          <div class="main-product__related-product">
-            <% for(let i=0; i < 8; i++) { %>
-            <a href="/products/<%= productsSortedByCount[i].id %>">
-              <%- include('../partials/product-card', {product: productsSortedByCount[i]}) %>
-            </a>
-            <% } %>
-          </div>
+        <%- include('../partials/requested-products', {productsSortedByCount}) %>
       </div>
   
 

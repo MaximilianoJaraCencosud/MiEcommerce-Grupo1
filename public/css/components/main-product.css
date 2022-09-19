@@ -130,6 +130,7 @@
 }
 
 @media (min-width: 785px) {
+
   .main-product__related-product {
     display: flex;
     flex-wrap: wrap;

@@ -2,6 +2,8 @@
 const fetch = require("node-fetch");
 let products = [];
 
+let hero = require('../../public/data/hero-products.json')
+
 fetch("http://localhost:8000/api/product")
   .then((res) => {
     return res.json();
@@ -35,6 +37,7 @@ const controller = {
     resp.render("home", {
       productsSortedByRate: prByRate,
       productsSortedByCount: prByCount,
+      hero: hero
     });
   },
   register: (req, resp) => {
@@ -51,12 +54,19 @@ const controller = {
   product: (req, resp) => {
     let id = req.params.id;
     let product = products.find((p) => p.id == id);
+
+    if(product == null){
+      return resp.render("404");
+
+    }
+
     const prByRate = getProductsByRate();
     resp.render("product", {
       product: product,
       productsSortedByRate: prByRate,
     });
   },
+
   checkout: (req, resp) => {
     resp.render("checkout");
   },

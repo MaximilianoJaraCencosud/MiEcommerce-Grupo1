@@ -1,6 +1,5 @@
-<div class="main-product__related-product">
+<section>
     <h2 class="home__section-products__title">Te puede interesar</h2>
-
     <div class="main-product__related-product">
         <% for(let i=0; i < 4; i++) { %>
         <a href="/products/<%= productsSortedByRate[i].id %>">
@@ -8,4 +7,5 @@
         </a>
         <% } %>
     </div>
-</div>
+</section>
+
