@@ -2,12 +2,12 @@
     background-image: url('../../images/error-404.png');
     background-repeat: no-repeat;
     background-position: center;
-    height: 60vh;
+    height: 80vh;
     text-align: center;
 }
 
 
 .main-404 button{
     /* text-align: center; */
-    margin-top: 250px;
+    margin-top: 450px;
 }
