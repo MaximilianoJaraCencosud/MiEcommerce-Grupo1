@@ -5,7 +5,9 @@
     </h3>
   </div>
   <div class="main-product__image">
-    <img src="<%= product.images[0] %>" alt="Imagen principal" srcset="" class="imagenPrincipal" />
+    <div class="main-product__image-container">
+      <img src="<%= product.images[0] %>" alt="Imagen principal" srcset="" class="imagenPrincipal" />
+    </div>
     <div class="main-product__miniaturas">
       <%product.images.map(img=> {%>
         <img src="<%= img %>" alt="Miniatura" />

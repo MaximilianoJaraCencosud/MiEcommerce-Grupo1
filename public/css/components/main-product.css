@@ -44,6 +44,19 @@
   display: none;
 }
 
+.main-product__image-container{
+  width: 90%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-product__image-container img{
+  width: 100%;
+  height: auto;
+}
+
 .main-product__image {
   display: flex;
   flex-direction: column;
