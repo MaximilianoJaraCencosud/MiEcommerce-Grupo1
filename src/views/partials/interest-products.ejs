@@ -1,9 +1,9 @@
 <section>
-    <h2 class="home__section-products__title">Te puede interesar</h2>
+    <h2 class="home__section-products__title"><%= title %> </h2>
     <div class="main-product__related-product">
-        <% for(let i=0; i < 4; i++) { %>
-        <a href="/products/<%= productsSortedByRate[i].id %>">
-            <%- include('../partials/product-card', {product: productsSortedByRate[i]}) %>
+        <% for(let i=0; i < count; i++) { %>
+        <a href="/products/<%= products[i].id %>">
+            <%- include('../partials/product-card', {product: products[i]}) %>
         </a>
         <% } %>
     </div>

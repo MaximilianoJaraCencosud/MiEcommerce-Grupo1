@@ -21,12 +21,12 @@
     </section>
     <!-- Sección Productos de Interes -->
       <div class="home__section-products">
-        <%- include('../partials/interest-products', {productsSortedByRate}) %>
+        <%- include('../partials/interest-products', {products: productsSortedByRate, title: "Te puede interesar", count: 4} ) %>
       </div>
 
     <!-- Sección Productos más pedidos -->
       <div class="home__section-products">
-        <%- include('../partials/requested-products', {productsSortedByCount}) %>
+        <%- include('../partials/interest-products', {products: productsSortedByCount, title: "Los más pedidos", count: 8}) %>
       </div>
   
 

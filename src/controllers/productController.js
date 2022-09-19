@@ -30,6 +30,11 @@ fetch("http://localhost:8000/api/product")
     return productsSortedByCount;
   }
 
+  const getProductsByCategory = (cat)=>{
+    let productsSortedByCategory = [...products];
+    return productsSortedByCategory.filter(p => p.category == cat)
+  }
+
 const controller = {
   home: (req, resp) => {
     const prByRate = getProductsByRate();
@@ -55,16 +60,23 @@ const controller = {
     let id = req.params.id;
     let product = products.find((p) => p.id == id);
 
-    if(product == null){
-      return resp.render("404");
+    if(product != null){
 
+      let productByCategory = getProductsByCategory(product.category);
+      resp.render("product", {
+        product: product,
+        productsSortedByCategory: productByCategory,
+      });
+
+    }else{
+      let productsByRate = getProductsByRate();
+      resp.render("product", {
+        product: product,
+        productsByRate: productsByRate,
+      });
     }
 
-    const prByRate = getProductsByRate();
-    resp.render("product", {
-      product: product,
-      productsSortedByRate: prByRate,
-    });
+    
   },
 
   checkout: (req, resp) => {
