@@ -8,7 +8,7 @@ include('../partials/header', {variable_search: true}) %>
       Volver al listado
     </a>
     <p>
-      <img src="/images/chevron-right.svg" alt="Imagen del producto" />Bebidas
+      <img src="/images/chevron-right.svg" alt="Imagen del producto" /><%= product.category.toUpperCase() %> Bebidas
     </p>
   </div>
 
@@ -18,10 +18,23 @@ include('../partials/header', {variable_search: true}) %>
       <%- include('../partials/interest-products', {products: productsSortedByCategory, title: "También te puede interesar", count: 4}) %>
     </div>
   <% }else{ %>
-    <h2>No encontrado</h2>
+
+    <div class="not-found">
+
+      <div class="not-found__title">
+        <h2>Producto no encontrado</h2>
+      </div>
+
+      <div class="not-found__img">
+        <img src="/images/not-found.svg" alt="">
+      </div>
+
+    </div>
+
     <div class="home__section-products">
       <%- include('../partials/interest-products', {products: productsByRate, title: "Quizás te pueda interesar", count: 4}) %>
     </div>
+
   <% } %>
 
   <!-- Importamos menú categorías-->
