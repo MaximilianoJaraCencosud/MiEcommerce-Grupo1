@@ -1,13 +1,17 @@
-.main-404{
-    background-image: url('../../images/error-404.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 80vh;
+.error-404{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error-404__title{
     text-align: center;
-}
+    font-size: 22px;
+    padding: 20px;
+  }
 
-
-.main-404 button{
-    /* text-align: center; */
-    margin-top: 450px;
-}
+  .error-404__img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }

@@ -7,9 +7,12 @@ include('../partials/header', {variable_search: true}) %>
       <img src="/images/arrow-left.svg" alt="Flecha volver al listado" />
       Volver al listado
     </a>
+    
+    <% if(product){ %> 
     <p>
-      <img src="/images/chevron-right.svg" alt="Imagen del producto" /><%= product.category.toUpperCase() %> Bebidas
+      <img src="/images/chevron-right.svg" alt="Imagen del producto" /><%= product.category.toUpperCase() %> 
     </p>
+    <% } %>
   </div>
 
   <% if(product!=null) {%> <%- include('../partials/main-product', {product:
