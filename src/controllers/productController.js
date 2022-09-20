@@ -111,8 +111,10 @@ const controller = {
   checkout: (req, resp) => {
     resp.render("checkout");
   },
+
   error404: (req, resp) => {
-    resp.status(404).render("404");
+    let productsByRate = getProductsByRate();
+    resp.status(404).render("404", { productsByRate });
   },
 };
 

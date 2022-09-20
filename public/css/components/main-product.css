@@ -228,9 +228,35 @@
     justify-content: space-between;
   }
 
+
   .main-product__related-product__low-quantity{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
   }
+
+}
+
+
+/* Sección si el producto no existe */
+.not-found{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found__title{
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+}
+
+.not-found__img{
+  text-align: center;
+  width: 80%;
+}
+
+.not-found__img img{
+  width: 80%;
+  height: auto;
 }
