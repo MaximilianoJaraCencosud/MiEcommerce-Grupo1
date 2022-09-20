@@ -8,14 +8,14 @@ include('../partials/header', {variable_search: true}) %>
       Volver al listado
     </a>
     
-    <% if(product){ %> 
+    <% if(product != undefined && product != null){ %> 
     <p>
       <img src="/images/chevron-right.svg" alt="Imagen del producto" /><%= product.category.toUpperCase() %> 
     </p>
     <% } %>
   </div>
 
-  <% if(product!=null) {%> <%- include('../partials/main-product', {product:
+  <% if(product != undefined && product != null) {%> <%- include('../partials/main-product', {product:
   product}) %>
     <div class="home__section-products">
       <%- include('../partials/interest-products', {products: productsSortedByCategory, title: "También te puede interesar", count: productsSortedByCategory.length}) %>
