@@ -1,19 +1,14 @@
 // Product controller
-const fetch = require("node-fetch");
-let products = [];
-
 let hero = require("../../public/data/hero-products.json");
 
-fetch("http://localhost:8000/api/product")
-  .then((res) => {
-    return res.json();
-  })
-  .then((res) => {
-    products = res;
-  });
+const {
+  getProducts,
+  getCart,
+  getProductById,
+} = require("../services/productsAPI");
 
-// Ordena el array de productos aleatoriamente  
-const getRandomProducts = () => {
+// Ordena el array de productos aleatoriamente
+const getRandomProducts = (products) => {
   let randomProducts = [];
   if (products.length > 4) {
     for (let i = 0; i < 4; i++) {
@@ -34,45 +29,47 @@ const getRandomProducts = () => {
 };
 
 // Función que retorna array con lista de productos ordenados por rate desc
-const getProductsByRate = () => {
-  let productsSortedByRate = [...products];
-  productsSortedByRate.sort((a, b) => {
+const getProductsByRate = (products) => {
+  products.sort((a, b) => {
     return b.rating.rate - a.rating.rate;
   });
-  if (productsSortedByRate.length > 4) {
-    return productsSortedByRate.slice(1, 5);
-  } 
-  return productsSortedByRate;
+  if (products.length > 4) {
+    return products.slice(1, 5);
+  }
+  return products;
 };
 
 // Función que retorna array con lista de productos ordenados por count desc
-const getProductsByCount = () => {
-  let productsSortedByCount = [...products];
-  productsSortedByCount.sort((a, b) => {
+const getProductsByCount = (products) => {
+  products.sort((a, b) => {
     return b.rating.count - a.rating.count;
   });
-  if (productsSortedByCount.length > 8) {
-    return productsSortedByCount.slice(1, 9);
+  if (products.length > 8) {
+    return products.slice(1, 9);
   }
-
-  return productsSortedByCount;
+  return products;
 };
 
-const getProductsByCategory = (cat, id) => {
-  let productsSortedByCategory = [...products];
-  if (productsSortedByCategory.length > 4) {
-    return productsSortedByCategory
-      .filter((p) => p.category == cat && p.id!=id)
-      .slice(1, 5);
+const getProductsByCategory = (cat, id, products) => {
+  if (products.length > 4) {
+    return products.filter((p) => p.category == cat && p.id != id).slice(1, 5);
   }
+  return products.filter((p) => p.category == cat);
+};
 
-  return productsSortedByCategory.filter((p) => p.category == cat);
+const getProductsCart = (userCart, products) => {
+  userCart.forEach((cartP) => {
+    cartP.product = products.find((p) => p.id === cartP.id);
+  });
+  return userCart;
 };
 
 const controller = {
-  home: (req, resp) => {
-    const prByRate = getProductsByRate();
-    const prByCount = getProductsByCount();
+  home: async (req, resp) => {
+    const products = await getProducts();
+    const prByRate = getProductsByRate(products);
+    const prByCount = getProductsByCount(products);
+
     resp.render("home", {
       productsSortedByRate: prByRate,
       productsSortedByCount: prByCount,
@@ -85,22 +82,33 @@ const controller = {
   login: (req, resp) => {
     resp.render("login");
   },
-  cart: (req, resp) => {
+
+  cart: async (req, resp) => {
+    const [cart, products] = await Promise.all([getCart(0), getProducts()]);
+    const userCart = getProductsCart(cart, products);
     resp.render("cart", {
-      products: products,
+      products: userCart,
     });
   },
-  product: (req, resp) => {
+
+  product: async (req, resp) => {
     let id = req.params.id;
-    let product = products.find((p) => p.id == id);
+    const [products, product] = await Promise.all([
+      getProducts(),
+      getProductById(id),
+    ]);
     if (product != null) {
-      let productByCategory = getProductsByCategory(product.category, product.id);
+      let productByCategory = getProductsByCategory(
+        product.category,
+        product.id,
+        products
+      );
       resp.render("product", {
         product: product,
         productsSortedByCategory: productByCategory,
       });
     } else {
-      let randomProducts = getRandomProducts();
+      let randomProducts = getRandomProducts(products);
       resp.render("product", {
         product: product,
         randomProducts: randomProducts,
@@ -112,8 +120,9 @@ const controller = {
     resp.render("checkout");
   },
 
-  error404: (req, resp) => {
-    let productsByRate = getProductsByRate();
+  error404: async (req, resp) => {
+    const products = await getProducts();
+    let productsByRate = getProductsByRate(products);
     resp.status(404).render("404", { productsByRate });
   },
 };
