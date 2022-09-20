@@ -18,7 +18,7 @@ include('../partials/header', {variable_search: true}) %>
   <% if(product!=null) {%> <%- include('../partials/main-product', {product:
   product}) %>
     <div class="home__section-products">
-      <%- include('../partials/interest-products', {products: productsSortedByCategory, title: "También te puede interesar", count: 4}) %>
+      <%- include('../partials/interest-products', {products: productsSortedByCategory, title: "También te puede interesar", count: productsSortedByCategory.length}) %>
     </div>
   <% }else{ %>
 
@@ -35,7 +35,7 @@ include('../partials/header', {variable_search: true}) %>
     </div>
 
     <div class="home__section-products">
-      <%- include('../partials/interest-products', {products: productsByRate, title: "Quizás te pueda interesar", count: 4}) %>
+      <%- include('../partials/interest-products', {products: randomProducts, title: "Quizás te pueda interesar", count: randomProducts.length}) %>
     </div>
 
   <% } %>
