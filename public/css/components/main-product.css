@@ -227,4 +227,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  .main-product__related-product__low-quantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }
