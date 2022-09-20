@@ -96,7 +96,9 @@
   justify-content: end;
   margin-top: 24px;
 }
-
+.cart-error{
+  padding-top: 20px;
+}
 @media screen and (min-width: 1024px) {
   .cart {
     padding: 16px 128px 16px 128px;

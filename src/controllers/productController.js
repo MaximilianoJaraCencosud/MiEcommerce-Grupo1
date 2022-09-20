@@ -35,11 +35,18 @@ const controller = {
   },
 
   cart: async (req, resp) => {
-    const [cart, products] = await Promise.all([getCart(0), getProducts()]);
-    const userCart = getProductsCart(cart, products);
-    resp.render("cart", {
-      products: userCart,
-    });
+    const [cart, products] = await Promise.all([getCart(5), getProducts()]);
+    
+    if (cart.status != 404) {
+      const userCart = getProductsCart(cart, products);
+      resp.render("cart", {
+        products: userCart,
+      });
+    }else{
+      resp.render("cart", {
+        products: null,
+      });
+    }
   },
 
   product: async (req, resp) => {

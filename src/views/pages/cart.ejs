@@ -6,6 +6,7 @@
         Volver</a>
       <h1 class="cart__title">Productos en tu Carrito</h1>
       <section class="cart__product-list">
+        <% if(products!= null){ %> 
         <% let totalPoints=0; products.map(p=> { %>
           <% totalPoints +=p.product.price * p.quantity %>
             <article class="cart__product-card">
@@ -30,6 +31,7 @@
               </div>
             </article>
             <% }) %>
+            
       </section>
       <section class="cart__total">
         <p class="cart__total__text">Total de puntos</p>
@@ -37,10 +39,15 @@
           <%= totalPoints %>
         </p>
       </section>
+      
       <section class="cart__pay">
         <a href="/checkout">
           <%- include('../partials/button',{text: 'Ir a Pagar' }) %>
         </a>
       </section>
+      
+      <% }else{ %> 
+        <h3 class="cart-error">No hay productos agregados a tu carrito</h3>
+      <% } %> 
     </main>
     <%- include('../partials/footer') %>
