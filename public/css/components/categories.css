@@ -15,6 +15,10 @@
   gap: 4px;
 }
 
+.categories__list li {
+ width: 12.5%;
+}
+
 .categories a {
   display: flex;
   align-content: center;
