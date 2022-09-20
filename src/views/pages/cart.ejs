@@ -1,40 +1,46 @@
-<%- include('../partials/head', {variable : "Cart | MiEcommerce"}) %> 
-<%-include('../partials/header', {variable_search: true}) %>
-<main class="cart">
-  <a href="/" class="cart__return">
-    <img src="images/arrow-left.svg" alt="Boton de regreso" />
-    Volver</a
-  >
-  <h1 class="cart__title">Productos en tu Carrito</h1>
-  <section class="cart__product-list">
-    <% for(let i=0; i < 4; i++) { %>
-    <article class="cart__product-card">
-      <div class="cart__product-card__content">
-        <img
-          src="<%= products[i].images[0] %>"
-          class="cart__product-card__img"
-          alt="<%= products[i].title %>"
-        />
-        <h3 class="cart__product-card__title"><%= products[i].title %></h3>
-      </div>
-      <div class="cart__product-card__actions">
-        <%- include('../partials/button',{text: 'Quitar'}) %>
-        <div class="cart__product-card__action-amount">
-          <button>-</button>
-          <p>1</p>
-          <button>+</button>
-        </div>
-        <p class="cart__product-card__price"><%= products[i].price %></p>
-      </div>
-    </article>
-    <% } %>
-  </section>
-  <section class="cart__total">
-    <p class="cart__total__text">Total de puntos</p>
-    <p class="cart__total__price">2977</p>
-  </section>
-  <section class="cart__pay">
-    <a href="/checkout"><%- include('../partials/button',{text: 'Ir a Pagar'}) %></a>
-  </section>
-</main>
-<%- include('../partials/footer') %>
+<%- include('../partials/head', {variable : "Cart | MiEcommerce" }) %>
+  <%-include('../partials/header', {variable_search: true}) %>
+    <main class="cart">
+      <a href="/" class="cart__return">
+        <img src="images/arrow-left.svg" alt="Boton de regreso" />
+        Volver</a>
+      <h1 class="cart__title">Productos en tu Carrito</h1>
+      <section class="cart__product-list">
+        <% let totalPoints=0; products.map(p=> { %>
+          <% totalPoints +=p.product.price * p.quantity %>
+            <article class="cart__product-card">
+              <div class="cart__product-card__content">
+                <img src="<%= p.product.images[0] %>" class="cart__product-card__img" alt="<%= p.product.title %>" />
+                <h3 class="cart__product-card__title">
+                  <%= p.product.title %>
+                </h3>
+              </div>
+              <div class="cart__product-card__actions">
+                <%- include('../partials/button',{text: 'Quitar' }) %>
+                  <div class="cart__product-card__action-amount">
+                    <button>-</button>
+                    <p>
+                      <%= p.quantity %>
+                    </p>
+                    <button>+</button>
+                  </div>
+                  <p class="cart__product-card__price">
+                    <%= p.product.price * p.quantity %>
+                  </p>
+              </div>
+            </article>
+            <% }) %>
+      </section>
+      <section class="cart__total">
+        <p class="cart__total__text">Total de puntos</p>
+        <p class="cart__total__price">
+          <%= totalPoints %>
+        </p>
+      </section>
+      <section class="cart__pay">
+        <a href="/checkout">
+          <%- include('../partials/button',{text: 'Ir a Pagar' }) %>
+        </a>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
