@@ -48,20 +48,23 @@ const controller = {
       getProducts(),
       getProductById(id),
     ]);
-    if (product != null) {
+
+    if (product.status != 404) {
       let productByCategory = getProductsByCategory(
         product.category,
         product.id,
         products
       );
+
       resp.render("product", {
         product: product,
         productsSortedByCategory: productByCategory,
       });
     } else {
       let randomProducts = getRandomProducts(products);
+
       resp.render("product", {
-        product: product,
+        product: null,
         randomProducts: randomProducts,
       });
     }

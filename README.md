@@ -8,8 +8,9 @@ Html - Css - Javascript
 
 ### Frameworks
 
-- Express para el lado del servidor
+- Express en el lado del servidor
 - Ejs para el modelo de plantillas Js
+- Fetch consulta asíncronica de la API
 
 ## Instalación
 
@@ -28,6 +29,15 @@ Ejecución en modo de desarrollo
 npm run dev
 ```
 Express quedará escuchando en el puerto: 8080
+
+<br>
+<br>
+
+## Consumo de API 
+Se utiliza datos provenietes de una API externa que se ejecuta en el puerto 5000
+
+ Nota: En la renderización de la vista de carrito es necesario contar con un usuario con id 0, con productos agregados en su carrito de compra.
+
 
 <br>
 <br>
