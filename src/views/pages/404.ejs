@@ -1,7 +1,20 @@
 <%- include('../partials/head', {variable : "Cart | MiEcommerce"}) %>
 <%-include('../partials/header', {variable_search: false}) %>
 <main class="main-404">
-    <a href="/"><%-include('../partials/button',{text: 'Ir al inicio'}) %></a>
+  
+  <div class="error-404">
+    
+    <div class="error-404__img">
+      <img src="images/error-404.png" alt="">
+    </div>
+    <a href="/"><%-include('../partials/button',{text: 'Página Principal'}) %></a>
+
+    </div>
+    <div class="error-404__products">
+      <div class="home__section-products">
+        <%- include('../partials/interest-products', {products: productsByRate, title: "Quizás te pueda interesar", count: 4}) %>
+      </div>
+    </div>
 </main>
     
   <!-- Importamos menú categorías-->
