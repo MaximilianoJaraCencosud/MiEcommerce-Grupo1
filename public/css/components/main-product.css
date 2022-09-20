@@ -244,10 +244,11 @@
 }
 
 .not-found__img{
-  width: 100%;
+  text-align: center;
+  width: 80%;
 }
 
 .not-found__img img{
-  width: 100%;
+  width: 80%;
   height: auto;
 }
