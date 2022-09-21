@@ -41,6 +41,7 @@ const getRandomProducts = (products) => {
     return products;
   };
   
+  // Funcion que retorna array con lista de productos que sean de una categoria especificada
   const getProductsByCategory = (cat, id, products) => {
     if (products.length > 4) {
       return products.filter((p) => p.category == cat && p.id != id).slice(1, 5);
