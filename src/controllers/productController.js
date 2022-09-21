@@ -36,6 +36,7 @@ const controller = {
 
   cart: async (req, resp) => {
     const [cart, products] = await Promise.all([getCart(0), getProducts()]);
+    const prByRate = getProductsByRate(products);
     
     if (cart.status != 404) {
       const userCart = getProductsCart(cart, products);
@@ -45,6 +46,7 @@ const controller = {
     }else{
       resp.render("cart", {
         products: null,
+        productsByRate: prByRate
       });
     }
   },

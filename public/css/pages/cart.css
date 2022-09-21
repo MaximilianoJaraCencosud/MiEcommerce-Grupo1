@@ -98,7 +98,22 @@
 }
 .cart-error{
   padding-top: 20px;
+  font-size: 20px;
 }
+
+.empty-cart{
+  margin: auto;
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.cart-error__products{
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 1024px) {
   .cart {
     padding: 16px 128px 16px 128px;
@@ -110,3 +125,5 @@
     justify-content: space-between;
   }
 }
+
+

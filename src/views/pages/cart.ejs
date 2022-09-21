@@ -47,7 +47,16 @@
       </section>
       
       <% }else{ %> 
-        <h3 class="cart-error">No hay productos agregados a tu carrito</h3>
+        <div class="empty-cart">
+          <h3 class="cart-error">No hay productos agregados a tu carrito</h3>
+          <div class="cart-error__products">
+            <div class="home__section-products">
+              <%- include('../partials/interest-products', {products: productsByRate, title: "Comienza agregando algunos productos", count: 4}) %>
+            </div>
+          </div>
+            <!-- Importación de menú de categorias -->
+          <%- include('../partials/categories') %>
+        </div>
       <% } %> 
     </main>
     <%- include('../partials/footer') %>
