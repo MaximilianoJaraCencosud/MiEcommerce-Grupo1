@@ -7,25 +7,38 @@ include('../partials/header', {variable_search: true}) %>
       <img src="/images/arrow-left.svg" alt="Flecha volver al listado" />
       Volver al listado
     </a>
+    
+    <% if(product != undefined && product != null){ %> 
     <p>
-      <img src="/images/chevron-right.svg" alt="Imagen del producto" />Bebidas
+      <img src="/images/chevron-right.svg" alt="Imagen del producto" /><%= product.category.toUpperCase() %> 
     </p>
+    <% } %>
   </div>
 
-  <!-- Importamos la tarjeta principal -->
-  <%- include('../partials/main-product', {product: product}) %>
+  <% if(product != undefined && product != null) {%> <%- include('../partials/main-product', {product:
+  product}) %>
+    <div class="home__section-products">
+      <%- include('../partials/interest-products', {products: productsSortedByCategory, title: "También te puede interesar", count: productsSortedByCategory.length}) %>
+    </div>
+  <% }else{ %>
 
-  <div class="home__section-products">
-    <h2 class="home__section-products__title">Tambien te puede interesar</h2>
+    <div class="not-found">
 
-      <div class="main-product__related-product">
-        <% for(let i=0; i < 4; i++) { %>
-        <a href="/products/<%= productsSortedByRate[i].id %>">
-          <%- include('../partials/product-card', {product: productsSortedByRate[i]}) %>
-        </a>
-        <% } %>
+      <div class="not-found__title">
+        <h2>Producto no encontrado</h2>
       </div>
-  </div>
+
+      <div class="not-found__img">
+        <img src="/images/not-found.svg" alt="">
+      </div>
+
+    </div>
+
+    <div class="home__section-products">
+      <%- include('../partials/interest-products', {products: randomProducts, title: "Quizás te pueda interesar", count: randomProducts.length}) %>
+    </div>
+
+  <% } %>
 
   <!-- Importamos menú categorías-->
   <%- include('../partials/categories') %>
