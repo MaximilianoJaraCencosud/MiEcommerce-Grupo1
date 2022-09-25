@@ -21,12 +21,12 @@
     </section>
     <!-- Sección Productos de Interes -->
 
-        <%- include('../partials/interest-products', {products: productsSortedByRate, title: "Te puede interesar", count: productsSortedByRate.length} ) %>
+        <%- include('../partials/products-list', {products: productsSortedByRate, title: "Te puede interesar", count: productsSortedByRate.length} ) %>
 
 
     <!-- Sección Productos más pedidos -->
 
-        <%- include('../partials/interest-products', {products: productsSortedByCount, title: "Los más pedidos", count: productsSortedByCount.length}) %>
+        <%- include('../partials/products-list', {products: productsSortedByCount, title: "Los más pedidos", count: productsSortedByCount.length}) %>
 
   
 

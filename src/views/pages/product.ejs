@@ -17,7 +17,7 @@ include('../partials/header', {variable_search: true}) %>
 
   <% if(product != undefined && product != null) {%> <%- include('../partials/main-product', {product:
   product}) %>
-      <%- include('../partials/interest-products', {products: productsSortedByCategory, title: "También te puede interesar", count: productsSortedByCategory.length}) %>
+      <%- include('../partials/products-list', {products: productsSortedByCategory, title: "También te puede interesar", count: productsSortedByCategory.length}) %>
 
   <% }else{ %>
 
@@ -33,7 +33,7 @@ include('../partials/header', {variable_search: true}) %>
 
     </div>
 
-      <%- include('../partials/interest-products', {products: randomProducts, title: "Quizás te pueda interesar", count: randomProducts.length}) %>
+      <%- include('../partials/products-list', {products: randomProducts, title: "Quizás te pueda interesar", count: randomProducts.length}) %>
 
   <% } %>
 
