@@ -111,14 +111,7 @@
   margin-top: 24px;
 }
 
-.main-product__btn {
-  background-color: var(--dark-gray);
-  width: 100%;
-  border: none;
-  height: 32px;
-  color: white;
-  padding: 10px;
-  border-radius: 16px;
+.button {
   margin-top: 16px;
 }
 
@@ -204,7 +197,7 @@
     order: 1;
   }
 
-  .main-product__btn {
+  .button {
     margin: 12px 0;
   }
 }

@@ -8,7 +8,7 @@
   --light-gray: rgba(153, 153, 153, 1);  
   --green: rgba(12, 176, 147, 1);
   --red: rgba(255, 0, 0, 1);
-            
+  --btn-hover: rgba(236, 0, 0, 1);
 }
 
 *,
