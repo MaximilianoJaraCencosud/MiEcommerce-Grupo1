@@ -1,5 +1,6 @@
 // Product controller
 let hero = require("../../public/data/hero-products.json");
+let categories = require("../../public/data/categories.json");
 
 const {
   getProducts,
@@ -25,6 +26,7 @@ const controller = {
       productsSortedByRate: prByRate,
       productsSortedByCount: prByCount,
       hero: hero,
+      categories
     });
   },
   register: (req, resp) => {
@@ -46,7 +48,8 @@ const controller = {
     }else{
       resp.render("cart", {
         products: null,
-        productsByRate: prByRate
+        productsByRate: prByRate,
+        categories
       });
     }
   },
@@ -68,6 +71,7 @@ const controller = {
       resp.render("product", {
         product: product,
         productsSortedByCategory: productByCategory,
+        categories
       });
     } else {
       let randomProducts = getRandomProducts(products);
@@ -75,6 +79,7 @@ const controller = {
       resp.render("product", {
         product: null,
         randomProducts: randomProducts,
+        categories
       });
     }
   },
@@ -86,7 +91,7 @@ const controller = {
   error404: async (req, resp) => {
     const products = await getProducts();
     let productsByRate = getProductsByRate(products);
-    resp.status(404).render("404", { productsByRate });
+    resp.status(404).render("404", { productsByRate, categories });
   },
 };
 
