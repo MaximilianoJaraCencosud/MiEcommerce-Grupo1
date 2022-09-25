@@ -23,27 +23,10 @@
   z-index: -1;
 }
 
-.home__section-products {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 32px;
-}
-
-.home__section-products__title {
-  font-size: 24px;
-  font-weight: 400;
-  align-self: flex-start;
-  margin-bottom: 16px;
-}
 
 @media (min-width: 811px) {
   .home__bg-green {
     height: 256px;
     top: 336px;
-  }
-
-  .home__section-products {
-    max-width: 1024px;
   }
 }
