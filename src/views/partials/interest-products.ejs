@@ -1,13 +1,14 @@
-<section>
-    <h2 class="home__section-products__title"><%= title %> </h2>
-    <div class="<% if(count<4) {%>
-        main-product__related-product__low-quantity
-        <%}%> main-product__related-product">
-        <% for(let i=0; i < count; i++) { %>
-        <a href="/products/<%= products[i].id %>">
-            <%- include('../partials/product-card', {product: products[i]}) %>
-        </a>
-        <% } %>
-    </div>
-</section>
-
+<div class="home__section-products">
+    <section>
+        <h2 class="home__section-products__title"><%= title %> </h2>
+        <div class="<% if(count<4) {%>
+            main-product__related-product__low-quantity
+            <%}%> main-product__related-product">
+            <% for(let i=0; i < count; i++) { %>
+            <a href="/products/<%= products[i].id %>">
+                <%- include('../partials/product-card', {product: products[i]}) %>
+            </a>
+            <% } %>
+        </div>
+    </section>
+</div>
