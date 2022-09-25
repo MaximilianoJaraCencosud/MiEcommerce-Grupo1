@@ -1,7 +1,7 @@
 
 /* Linea Verde parte superior de la página */
 .home__bg-green {
-  background-color: #0cb093;
+  background-color: var(--green);
   height: 270px;
   width: 100%;
   min-width: 360px;

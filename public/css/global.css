@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
+/* Declaración de variables */
+:root{
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
+  --dark-gray: rgba(73, 79, 81, 1);
+  --light-gray: rgba(153, 153, 153, 1);  
+  --green: rgba(12, 176, 147, 1);
+  --red: rgba(255, 0, 0, 1);
+            
+}
+
 *,
 *::after,
 *::before {
@@ -14,12 +25,12 @@ html {
 }
 
 body {
-  background-color: #efefef;
+  background-color: var(--white);
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--black);
 }
 
 li {
