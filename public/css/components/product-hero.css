@@ -15,7 +15,7 @@
   background-size: cover;
   display: flex;
   align-items: flex-end;
-  color: #efefef;
+  color: var(--white);
   font-weight: 700;
   font-size: 18px;
   border-radius: 16px;
