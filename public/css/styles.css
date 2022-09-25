@@ -1,7 +1,4 @@
 @import "./global.css";
-@import "./pages/register.css";
-@import "./pages/login.css";
-@import "./pages/products.css";
 @import "./pages/cart.css";
 @import "./pages/home.css";
 @import "./pages/checkout.css";

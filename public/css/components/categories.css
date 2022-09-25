@@ -2,7 +2,7 @@
 .categories {
   width: 100%;
   max-width: 385px;
-  height: 285px;
+  height: 128px;
   background-color: var(--dark-gray);
   margin: 24px 16px 0;
   border-radius: 16px;
@@ -11,8 +11,12 @@
 .categories__list {
   display: flex;
   flex-direction: column;
-  padding: 16px 24px;
+  padding: 16px 16px;
   gap: 4px;
+}
+
+.categories__list span:last-of-type{
+  display: none;
 }
 
 .categories__list li {
@@ -55,7 +59,7 @@
 
   .categories__list span{
     background-color: aliceblue;
-    width: 1px;
-    height: 80%;
+    width: 2px;
+    height: 100%;
   }
 }
