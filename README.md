@@ -42,7 +42,7 @@ Se utiliza datos provenietes de una API externa que se ejecuta en el puerto 5000
 <br>
 <br>
 
-###Equipo de desarrollo :computer:
+### Equipo de desarrollo :computer:
 
 - Maximiliano Jara
 - Agustin Alonso
