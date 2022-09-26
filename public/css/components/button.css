@@ -8,8 +8,14 @@
     border-radius: 16px;
     font-weight: 400;
     padding: 8px 16px;
+    transition:disabled ease-in-out 1 s;
   }
   
   .button:hover{
     background-color: var(--red);
+  }
+  
+  .button:disabled {
+    background-color: var(--light-gray);
+    color: rgba(255, 255, 255, 0.8)
   }
