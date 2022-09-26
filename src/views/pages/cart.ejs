@@ -19,11 +19,12 @@
               <div class="cart__product-card__actions">
                 <%- include('../partials/button',{text: 'Quitar' }) %>
                   <div class="cart__product-card__action-amount">
-                    <button>-</button>
-                    <p>
+                    <button value="-">-</button>
+                    <p id="quantity<%= p.title %> ">
                       <%= p.quantity %>
                     </p>
-                    <button>+</button>
+                    <input type="text" id="txtIdProduct<% p.id %> " value="<%= p.id %> " hidden>
+                    <button value="+">+</button>
                   </div>
                   <p class="cart__product-card__price">
                     <%= p.product.price * p.quantity %>
@@ -45,7 +46,7 @@
           <%- include('../partials/button',{text: 'Ir a Pagar' }) %>
         </a>
       </section>
-      
+      <script src="/js/cart.js"></script>
       <% }else{ %> 
         <div class="empty-cart">
           <h3 class="cart-error">No hay productos agregados a tu carrito</h3>
@@ -57,4 +58,5 @@
         </div>
       <% } %> 
     </main>
+    
     <%- include('../partials/footer') %>
