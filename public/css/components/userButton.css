@@ -1,0 +1,21 @@
+.user-button{
+    display: flex;
+    align-items: center;
+    /* margin-top: 0px; */
+}
+
+.user-button__profilePic{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.user-button__profilePic img{
+    width: 24px;
+    height: 24px;
+}
+
+.user-button__name{
+    padding: 4px;
+}
