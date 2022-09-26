@@ -37,6 +37,7 @@
         <%= product.description %>
       </p>
     </div>
-    <input type="button" class="button" value="Agragar al Carrito" />
+    <input type="text" hidden value="<%= product.id%>" id="txtId">
+    <input type="button" class="button" value="Agragar al Carrito" id="btnAddToCart"/>
   </div>
 </section>
