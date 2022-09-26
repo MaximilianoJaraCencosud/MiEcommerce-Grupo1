@@ -11,16 +11,14 @@
 
         $userName.innerHTML = userName;
 
-        userMenu.classList.remove('hidden')
-        userMenu.classList.add('flex')
-        loginMenu.classList.add('hidden')
+        loginMenu.style.display = 'none'
+        userMenu.style.display = 'flex'
 
     }else{
         console.log('No logueado');
-        userMenu.classList.add('hidden')
-        userMenu.classList.remove('flex')
-        loginMenu.classList.remove('hidden')
-        loginMenu.classList.add('flex')
+
+        loginMenu.style.display = 'flex'
+        userMenu.style.display = 'none'
     }
     
 })();

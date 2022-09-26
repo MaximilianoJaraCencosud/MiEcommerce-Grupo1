@@ -17,10 +17,20 @@
     <a href="/cart">
       <%- include('../partials/cartButton') %>
     </a>
-    <% } %> 
     
     <%- include('../partials/userButton') %>
+    
+    <% } else {%>
+      <div class="noLoged hidden">
+        <a href="/login">Ingresar</a>
+        <span></span>
+        <a href="/register">Registrarse</a>
+      </div>
+    <% } %> 
+
 
   </div>
+
+
 
 </header>
