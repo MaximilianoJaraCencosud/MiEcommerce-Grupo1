@@ -1,7 +1,7 @@
 .user-button{
     display: flex;
     align-items: center;
-    /* margin-top: 0px; */
+    max-width: 80px;
 }
 
 .user-button__profilePic{
