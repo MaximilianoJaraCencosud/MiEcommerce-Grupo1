@@ -6,10 +6,14 @@
     <div class="access__card">
       <h2 class="access__card__title">¡Registrate!</h2>
       <form class="access__card__form" action="" method="POST">
-        <%- include('../partials/input',{type: 'email', placeholder: 'Tu email'
+        <%- include('../partials/input',{type: 'text', placeholder: 'Nombre', nombre: 'Nombre'
+        }) %>
+        <%- include('../partials/input',{type: 'text', placeholder: 'Apellido', nombre: 'Apellido'
+      }) %>
+        <%- include('../partials/input',{type: 'email', placeholder: 'Tu email', nombre: 'Correo'
         }) %> <%- include('../partials/input',{type: 'password', placeholder:
-        'Tu nueva contraseña' }) %> <%- include('../partials/input',{type:
-        'password', placeholder: 'Repite tu contraseña' }) %> <%-
+        'Tu nueva contraseña', nombre: 'password' }) %> <%- include('../partials/input',{type:
+        'password', placeholder: 'Repite tu contraseña', nombre: 'password' }) %> <%-
         include('../partials/button',{text: 'Crear Cuenta'}) %>
       </form>
     </div>
@@ -18,4 +22,5 @@
     </p>
   </div>
 </main>
+<script src="/js/register.js"></script>
 <%- include('../partials/footer') %>
