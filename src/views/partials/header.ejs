@@ -6,7 +6,7 @@
   <% if(variable_search){ %> 
   <input type="text" class="header__search" placeholder="Buscar productos..." />
   <a href="/cart">
-    <img src="/images/cart.png" alt="Es el carrito" class="header__cart" />
+    <%- include('../partials/cartButton') %>
   </a>
   <% } %> 
   <img src="/images/profilepiccontorno.svg" alt="Perfil de usuario" class="header__profile-img" />

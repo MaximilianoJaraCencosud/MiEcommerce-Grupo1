@@ -114,11 +114,11 @@
 
 @media (min-width: 1024px) {
   .section-hero{
+    width: 1024px;
     justify-content:  center;
   }
 
   .product-hero {
     width: 512px;
-    min-width: 512px;
   }
 }

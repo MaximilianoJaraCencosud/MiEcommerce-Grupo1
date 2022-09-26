@@ -24,12 +24,6 @@
   padding: 0 0 0 20px;
 }
 
-.header__cart {
-  margin: 0px 8px;
-  width: 32px;
-  height: 32px;
-}
-
 .header__profile-img {
   width: 32px;
   height: 32px;
@@ -37,6 +31,7 @@
 
 .header__profile-btn {
   display: none;
+  margin-left: 8px;
 }
 
 @media (min-width: 800px) {
