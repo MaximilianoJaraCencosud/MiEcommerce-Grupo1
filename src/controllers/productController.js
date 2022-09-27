@@ -42,9 +42,7 @@ const controller = {
     
     if (cart.status != 404) {
       const userCart = getProductsCart(cart, products);
-      resp.render("cart", {
-        products: userCart,
-      });
+      resp.render("cart");
     }else{
       resp.render("cart", {
         products: null,
