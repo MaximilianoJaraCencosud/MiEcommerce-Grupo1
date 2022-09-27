@@ -60,6 +60,14 @@ li {
   align-items: center;
 }
 
+.hidden{
+  display: none;
+}
+
+.flex{
+  display: flex;
+}
+
 @media (min-width: 811px) {
   .layout-container {
     padding-bottom: 48px;

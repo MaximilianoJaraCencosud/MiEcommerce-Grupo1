@@ -81,6 +81,15 @@
   height: 48px;
   border-radius: 8px;
   margin-top: 8px;
+  transition: all ease-in-out .3s;
+}
+
+.main-product__miniaturas img:hover {
+  cursor: pointer;
+  transform: translateX(8px);
+  border: 1px solid var(--green);
+  filter: brightness(1.1);
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
 }
 
 .main-product_info {
@@ -111,7 +120,7 @@
   margin-top: 24px;
 }
 
-.button {
+.button__addCart {
   margin-top: 16px;
 }
 
@@ -197,7 +206,7 @@
     order: 1;
   }
 
-  .button {
+  .button__addCart {
     margin: 12px 0;
   }
 }
@@ -252,4 +261,7 @@
 .not-found__img img{
   width: 80%;
   height: auto;
+}
+.img-selected { 
+  border: 3px solid var(--red);
 }
