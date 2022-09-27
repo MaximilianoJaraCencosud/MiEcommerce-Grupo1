@@ -1,4 +1,8 @@
 window.addEventListener("load", function () {
+
+  let emailsList = [];
+
+
   let button = document.querySelector(".button");
   let inputs = document.querySelectorAll("input");
   let campoNombre = inputs[0];
@@ -40,11 +44,12 @@ window.addEventListener("load", function () {
     // Comprobación si el correo ingresado tiene formato valido
     if(!regularExp.test(userName)) alert('Pusiste un MAIL no valido');
 
+    
     // Comprobación si existe el correo en la BD
-    if(await existMail(userName)  === false){
-      alert('No existe correo registrado');
+    if(await existMail(userName)){
+      alert('Existencia');
     } else{
-      alert('Si amigo !!! existe correo registrado');
+      alert('No estamo');
     }
 
     userPassword = campoPassword.value;
@@ -80,20 +85,42 @@ window.addEventListener("load", function () {
           localStorage.setItem("user", JSON.stringify(user) );
           localStorage.setItem("isLogged", true );
 
-          getCart(data.id)
+          getCart(data.id);
 
           window.location.href = '/';
         }
       })
       .catch((error) =>{
         if(error == 'Error: 405' || 'Error: 400'){
-          this.alert('Correo o password incorrectos')
+          // this.alert('Correo o password incorrectos')
         }
       })
   })
 
 
 });
+
+
+
+
+function listEmails(){
+  let url = 'http://localhost:8000/api/user';
+  let list = [];
+
+  fetch(url)
+    .then((response)=>{
+      return response.json();
+    })
+    .then((data)=>{
+      data.forEach(element => {
+        list.push(element.email);
+      });
+    })
+    .catch((error)=>{
+      console.log(error)
+    });
+}
+
 
 
 
@@ -110,10 +137,11 @@ function existMail(mail){
       data.forEach(element => {
         console.log(element.email);
         if(element.email == mail){
-          exist= true;
+          alert('Retorno TRUE')
           return true;
         } 
       });
+      alert('Retorno FALSE')
       return false;
     })
     .catch((error)=>{
