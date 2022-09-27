@@ -7,16 +7,15 @@ window.addEventListener("load", function () {
   for (let i = 0; i < miniaturas.length; i++) {
     miniaturas[i].addEventListener ('click', function (e) {
       
-    removeSelected(miniaturas);
+    removeSelected(miniaturas, imagenPrincipal);
 
-    imagenPrincipal.classList.add('fadeIn');
     imagenPrincipal.src = miniaturas[i].src
     this.classList.add('img-selected')
   })
   }
 });
 
-function removeSelected(miniaturas){
+function removeSelected(miniaturas, imagenPrincipal){
   miniaturas.forEach(img => {
     img.classList.remove('img-selected');
   });
