@@ -6,14 +6,16 @@
     <div class="access__card">
       <h2 class="access__card__title">¡Registrate!</h2>
       <form class="access__card__form" action="" method="POST">
-        <%- include('../partials/input',{type: 'text', placeholder: 'Nombre', nombre: 'Nombre'
+        <%- include('../partials/input',{type: 'text', placeholder: 'Nombre', name: 'Nombre'
         }) %>
-        <%- include('../partials/input',{type: 'text', placeholder: 'Apellido', nombre: 'Apellido'
+        <p class="text-error">El campo Nombre debe contener al menos 2 caracteres</p>
+        <%- include('../partials/input',{type: 'text', placeholder: 'Apellido', name: 'Apellido'
       }) %>
-        <%- include('../partials/input',{type: 'email', placeholder: 'Tu email', nombre: 'Correo'
-        }) %> <%- include('../partials/input',{type: 'password', placeholder:
-        'Tu nueva contraseña', nombre: 'password' }) %> <%- include('../partials/input',{type:
-        'password', placeholder: 'Repite tu contraseña', nombre: 'password' }) %> <%-
+      <p class="text-error">El campo Apellido debe contener al menos 2 caracteres</p>
+        <%- include('../partials/input',{type: 'email', placeholder: 'Tu email', name: 'Correo'
+        }) %> <p class="text-error">El Correo debe mantener el formato estandar Ej: prueba@example.com</p><%- include('../partials/input',{type: 'password', placeholder:
+        'Tu nueva contraseña', name: 'Password' }) %> <p class="text-error">La Contraseña debe contener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula NO puede tener otros símbolos</p> <%- include('../partials/input',{type:
+        'password', placeholder: 'Repite tu contraseña', name: 'RepitePassword' }) %><p class="text-error">La Contraseña debe contener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula NO puede tener otros símbolos</p> <%-
         include('../partials/button',{text: 'Crear Cuenta'}) %>
       </form>
     </div>
