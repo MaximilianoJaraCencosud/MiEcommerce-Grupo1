@@ -11,8 +11,12 @@
 @import "./components/forms.css";
 @import "./components/partials.css";
 @import "./components/main-product.css";
+
+@import "./components/dark-mode.css";
+
 @import "./components/products-list.css";
 @import "./components/button.css";
 @import "./components/cartButton.css";
 @import "./components/userButton.css";
 @import "./components/modal.css";
+
