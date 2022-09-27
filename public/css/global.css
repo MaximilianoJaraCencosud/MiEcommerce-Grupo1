@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  background-color: var(--white);
+  background-color: #e5e5e5e5;
 }
 
 a {
@@ -43,7 +43,7 @@ li {
 }
 
 .layout-container {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   padding-bottom: 25px;
 }
 
@@ -58,6 +58,14 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.hidden{
+  display: none;
+}
+
+.flex{
+  display: flex;
 }
 
 @media (min-width: 811px) {

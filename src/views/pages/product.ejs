@@ -4,7 +4,7 @@ include('../partials/header', {variable_search: true}) %>
 <main class="product">
   <div class="product__action-return">
     <a href="/">
-      <img src="/images/arrow-left.svg" alt="Flecha volver al listado" />
+      <img src="/images/arrow-left.svg" alt="Flecha volver al listado" class="arrow-left"/>
       Volver al listado
     </a>
     
@@ -40,5 +40,7 @@ include('../partials/header', {variable_search: true}) %>
   <!-- Importamos menú categorías-->
   <%- include('../partials/categories') %>
 </main>
+
+<script src="/js/product.js"></script>
 
 <%- include('../partials/footer') %>
