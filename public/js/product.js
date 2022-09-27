@@ -25,27 +25,37 @@ function removeSelected(miniaturas, imagenPrincipal){
   
   
   
+
+}
+
 const addProductToCart = ()=>{
-    let txtId = document.getElementById('txtId').value;
-    localStorage.setItem('userId', 1);
-    let data = {
-            userId: parseInt(localStorage.getItem('userId')),
-            product: {
-            id: parseInt(txtId),
-            }
-        }
-    fetch('http://localhost:5000/api/cart', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)     
-    })
-    .then(res => res.json())
-    .then(data => console.log(data));
+  let txtId = document.getElementById('txtId').value;
+  let datos = localStorage.getItem('user');
+  let user = JSON.parse(datos);
+  let data = {
+          userId: parseInt(user.id),
+          product: {
+          id: parseInt(txtId),
+          }
+      }
+  fetch('http://localhost:8000/api/cart', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)     
+  })
+  .then(res => res.json())
+  .then(data =>{
+    console.log(data);
+    if(localStorage.getItem('quantity-articles-cart')!=null){
+      let quantityArticles = document.getElementById('quantity-articles-cart');
+      quantityArticles.innerHTML = parseInt(localStorage.getItem('quantity-articles-cart'))+1; 
+    }
+    
+    alert("Agregaro al carrito");
+  });
 }
 
 const btnAddTocart = document.getElementById('btnAddToCart');
 btnAddTocart.addEventListener('click', addProductToCart);
-}
-
