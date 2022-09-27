@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  let buttonMenu = document.querySelector(".header__profile-btn");
+  let buttonMenu = document.querySelector(".user-button");
   let buttonMenuMobile = document.querySelector(".header__profile-img");
   let menu = document.querySelector(".menu");
   let theme = document.querySelector(".menu__theme");
@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", function () {
   );
 
   if (buttonMenu) {
+    console.log(menu);
     buttonMenu.addEventListener("click", () => {
       menu.classList.add("hide");
     });

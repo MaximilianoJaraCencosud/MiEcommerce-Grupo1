@@ -1,7 +1,7 @@
 // Como líder del Equipo de Desarrollo, quiero que, cuando un cliente agrega un producto a su carrito, se almacene esta información dentro de la API que nos proporcionó el equipo de backend, para poder tener persistencia de datos entre sesiones.
 // Para esto debemos respetar el siguiente formato:
 // localStorage.setItem(J)
-window.addEventListener('load', async()=>{
+window.addEventListener('DOMContentLoaded', async()=>{
     let productsCarrito;
     await  getCart()
     .then(()=>{
@@ -42,6 +42,8 @@ window.addEventListener('load', async()=>{
         });
     });
 })
+
+
 
 //----obtengo carrito del cliente y ejecuto listProducts [acá también se utilizan getProducts y getProductsCart]
 const getCart = async() => {
@@ -136,6 +138,7 @@ const listProducts = (products)=>{
     if(products!= null && products.length>0){
         
         products.map((p)=>{
+
             totalPoints+= p.product.price * p.quantity;
             console.log(totalPoints);
             content += `
