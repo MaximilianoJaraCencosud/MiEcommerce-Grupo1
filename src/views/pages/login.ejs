@@ -6,9 +6,9 @@
     <div class="access__card">
       <h2 class="access__card__title">¡Hola!</h2>
       <form class="access__card__form" name="loginForm">
-        <%- include('../partials/input',{type: 'text', placeholder: 'Tu email' }) %> 
-        <%- include('../partials/input',{type: 'password', placeholder: 'Tu contraseña' }) %> 
-        <%- include('../partials/button',{text: 'Iniciar Sesión', type: 'submit'}) %>
+        <%- include('../partials/input',{type: 'email', placeholder: 'Ingrese email', name: 'Correo'  }) %> 
+        <%- include('../partials/input',{type: 'password', placeholder: 'Tu contraseña', name: 'Password' }) %> 
+        <%-include('../partials/button',{text: 'Iniciar Sesión', type: 'submit'}) %>
       </form>
     </div>
     <p class="access__text" for="">

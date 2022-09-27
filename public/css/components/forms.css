@@ -53,3 +53,13 @@
     text-decoration: underline;
   }
   
+  .text-error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+    color: var(--red)
+  }
+
+  .text-error-activo{
+    display: block;
+  }
