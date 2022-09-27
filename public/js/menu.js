@@ -20,17 +20,23 @@ window.addEventListener("DOMContentLoaded", function () {
     ".cart__product-card__action-amount button"
   );
 
-  buttonMenu.addEventListener("click", () => {
-    menu.classList.add("hide");
-  });
+  if (buttonMenu) {
+    buttonMenu.addEventListener("click", () => {
+      menu.classList.add("hide");
+    });
+  }
 
-  buttonMenuMobile.addEventListener("click", () => {
-    menu.classList.add("hide");
-  });
+  if (buttonMenuMobile) {
+    buttonMenuMobile.addEventListener("click", () => {
+      menu.classList.add("hide");
+    });
+  }
 
-  menu.addEventListener("click", () => {
-    menu.classList.remove("hide");
-  });
+  if (menu) {
+    menu.addEventListener("click", () => {
+      menu.classList.remove("hide");
+    });
+  }
 
   if (localStorage.getItem("darkMode") === "true") {
     modoOscuro();
@@ -40,15 +46,17 @@ window.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("darkMode", false);
   }
 
-  theme.addEventListener("click", () => {
-    if (localStorage.getItem("darkMode") === "true") {
-      modoClaro();
-      localStorage.setItem("darkMode", false);
-    } else {
-      modoOscuro();
-      localStorage.setItem("darkMode", true);
-    }
-  });
+  if (theme) {
+    theme.addEventListener("click", () => {
+      if (localStorage.getItem("darkMode") === "true") {
+        modoClaro();
+        localStorage.setItem("darkMode", false);
+      } else {
+        modoOscuro();
+        localStorage.setItem("darkMode", true);
+      }
+    });
+  }
 
   function modoOscuro() {
     body.classList.add("background-dark");
@@ -91,9 +99,13 @@ window.addEventListener("DOMContentLoaded", function () {
     body.classList.remove("background-dark");
     header.classList.remove("card-product-cart-dark");
     footer.classList.remove("card-product-cart-dark");
-    menu.classList.remove("menu-dark");
+    if (menu) {
+      menu.classList.remove("menu-dark");
+    }
 
-    darkModeText.innerHTML = "Cambiar a modo Oscuro";
+    if (darkModeText) {
+      darkModeText.innerHTML = "Cambiar a modo Oscuro";
+    }
 
     accessCard.forEach((element) => {
       element.classList.remove("card-product-dark");
