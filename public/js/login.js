@@ -26,20 +26,18 @@ window.addEventListener("load", async function () {
   });
 
   campoPassword.addEventListener("keyup", function () {
-    if (campoNombre.value.length >= 1 && campoPassword.value.length >= 1) {
-      button.disabled = false;
+  if (campoNombre.value.length >= 1 && campoPassword.value.length >= 1) {
+    button.disabled = false;
 
-    } else {
-      button.disabled = true;
-    }
+  } else {
+    button.disabled = true;
+  }
+
   });
-
-
 
   // Listener Clik on Button
   button.addEventListener ('click', async (e)=>{
     e.preventDefault();
-
 
     userName = campoNombre.value;
 
@@ -51,58 +49,56 @@ window.addEventListener("load", async function () {
 
     userPassword = campoPassword.value;
 
-    let url = 'http://localhost:8000/api/user/login';
+    if(!errors){
 
-    let data = {
-      email : userName,
-      password : userPassword
-    }
+      let url = 'http://localhost:8000/api/user/login';
 
-    let settings = {
-      "method": "POST",
-      "headers": {
-        'Content-type': 'application/json'
-      },
-      "body": JSON.stringify(data)
-    }
-
-    fetch(url, settings)
-      .then((response) =>{
-        console.log(response)
-        if(response.status != 200) throw Error (response.status)
-        return response.json();
-      })
-      .then((data) =>{
-        if(data.id != null){
-          const user = {
-            id: data.id,
-            mail: data.email,
-            name: data.name
-          }
-          localStorage.setItem("user", JSON.stringify(user) );
-          localStorage.setItem("isLogged", true );
-
-          getCart(data.id);
-
-          window.location.href = '/';
-        }
-      })
-      .catch((error) =>{
-        if(error == 'Error: 405' || 'Error: 400'){
-          errors.push('Email o contraseña no validos');
-        }
-      })
-
-      if(errors){
-        errors.forEach((error)=>{
-          console.log(error)
-        })
+      let data = {
+        email : userName,
+        password : userPassword
       }
-  })
-
+  
+      let settings = {
+        "method": "POST",
+        "headers": {
+          'Content-type': 'application/json'
+        },
+        "body": JSON.stringify(data)
+      }
+      
+      fetch(url, settings)
+        .then((response) =>{
+          console.log(response)
+          if(response.status != 200) throw Error (response.status)
+          return response.json();
+        })
+        .then((data) =>{
+          if(data.id != null){
+            const user = {
+              id: data.id,
+              mail: data.email,
+              name: data.name
+            }
+            localStorage.setItem("user", JSON.stringify(user) );
+            localStorage.setItem("isLogged", true );
+  
+            getCart(data.id);
+  
+            window.location.href = '/';
+          }
+        })
+        .catch((error) =>{
+          if(error == 'Error: 405' || 'Error: 400'){
+            errors.push('Email o contraseña no validos');
+          }
+        })        
+    }else{
+      console.log(errors);
+    }
+      
+  });
 
 });
-
 
 
 
@@ -121,8 +117,7 @@ async function  listEmails(){
     }
     finally{
       return list;
-  }
-    
+  } 
 }
 
 
@@ -132,11 +127,11 @@ function getCart(id){
   fetch(`${url}${id}`)
     .then((response)=>{
       return response.json();
-    })
+  })
     .then((data)=>{
       console.log(data);
-    })
+  })
     .catch((error)=>{
       console.log(error)
-    })
+  })
 }

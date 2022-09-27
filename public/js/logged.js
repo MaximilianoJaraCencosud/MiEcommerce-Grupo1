@@ -1,5 +1,4 @@
-
-(() => {
+window.addEventListener('load', ()=>{
 
     let loginMenu = document.querySelector('.noLoged');
     let userMenu = document.querySelector('.loged');
@@ -22,7 +21,7 @@
         if(userMenu) userMenu.style.display = 'none'
     }
     
-})();
+});
 
 
 function isLoged (){
