@@ -5,7 +5,6 @@ window.addEventListener('load', async()=>{
     let productsCarrito;
     await  getCart()
     .then(()=>{
-
         document.querySelectorAll('.cart__product-card__actions').forEach(pc =>{
             pc.addEventListener('click', (e)=>{
                 if(e.target.value == "+"){
@@ -40,9 +39,6 @@ window.addEventListener('load', async()=>{
                 }
             })
         });
-        
-
-
     });
 })
 
@@ -56,8 +52,12 @@ const getCart = async() => {
       return res.json();
     })
     .then(data =>{
-        console.log(data);
-        listProducts(getProductsCart(data, products));
+        if(data.status == 404 || data.length <1){
+            showEmptyCart(getProductsByRate(products))
+        }else{
+            listProducts(getProductsCart(data, products));
+        }
+        
     });
 
   }
@@ -194,6 +194,9 @@ const listProducts = (products)=>{
         <h3 class="cart-error">No hay productos agregados a tu carrito</h3>
           <div class="cart-error__products">
               <%- include('../partials/products-list', {products: productsByRate, title: "Comienza agregando algunos productos", count: 4}) %>
+
+
+
           </div>
             <!-- Importación de menú de categorias -->
           <%- include('../partials/categories') %>
@@ -202,3 +205,85 @@ const listProducts = (products)=>{
     }
 }
 
+//--------------Obtengo productos ordenados por rate
+const getProductsByRate = (products) => {
+    products.sort((a, b) => {
+      return b.rating.rate - a.rating.rate;
+    });
+    if (products.length > 4) {
+      return products.slice(1, 5);
+    }
+    return products;
+  };
+
+  const showEmptyCart = (productByRate)=>{
+    let content;
+    let emptyCart = document.getElementById('empty-cart');
+
+    content = `
+        <h3 class="cart-error">No hay productos agregados a tu carrito</h3>
+        <div class="cart-error__products">
+            <div class="products-list">
+            <section>
+                <h2 class="products-list__title">Comienza agregando algunos productos</h2>
+
+                
+                <div class=" 
+            `;
+            
+    if(productByRate.length<4){ 
+        content += "main-product__related-product__low-quantity";
+    }
+            
+    content += `main-product__related-product">`
+    for(let i= 0; i<4 || i<productByRate.length; i++){
+        content+=`
+            <a href="/products/<%= products[i].id %>">
+                <%- include('../partials/product-card', {product: products[i]}) %>
+
+
+                <article class="main-product__related-product-card">
+                <div class="section-article__image">
+              
+                  <img src=`
+                if(productByRate[i].images.length == 0) {
+                    content+="/images/no-image.jpeg" 
+                } else{ 
+                    content+=`${productByRate[i].images[0]}`
+                }
+                  `alt="Imagen de ${productByRate[i].title}" srcset="" class="imagenPrincipal" />
+                </div>
+              
+                <div class="section-article__desc">
+                  <div class="desc">
+                    <p>
+                      ${productByRate[i].title}
+                    </p>
+                  </div>
+              
+                  <div class="section-article__price">
+                    <p class="valorNumerico">
+                      ${productByRate[i].price}
+                    </p>
+                    <p class="puntos">PUNTOS</p>
+                  </div>
+                </div>
+              </article>
+
+
+
+
+
+
+            </a>
+        `
+    }
+    content+=`
+            </div>
+            </section>
+        </div>
+
+        </div>
+        `;
+    emptyCart.innerHTML = content;
+  }
