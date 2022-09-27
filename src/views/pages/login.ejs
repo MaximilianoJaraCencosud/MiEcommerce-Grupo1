@@ -5,10 +5,10 @@
   <div class="access__container">
     <div class="access__card">
       <h2 class="access__card__title">¡Hola!</h2>
-      <form class="access__card__form">
+      <form class="access__card__form" name="loginForm">
         <%- include('../partials/input',{type: 'text', placeholder: 'Tu email' }) %> 
         <%- include('../partials/input',{type: 'password', placeholder: 'Tu contraseña' }) %> 
-        <%- include('../partials/button',{text: 'Iniciar Sesión'}) %>
+        <%- include('../partials/button',{text: 'Iniciar Sesión', type: 'submit'}) %>
       </form>
     </div>
     <p class="access__text" for="">
@@ -16,7 +16,9 @@
     </p>
   </div>
  
-
+  
+  
 </main>
-<script src="/js/login.js"> </script>
+<%- include('../partials/modal') %>
+<script src="/js/login.js" type="module"> </script>
 <%- include('../partials/footer') %>
