@@ -1,84 +1,20 @@
+
 <!-- Navegación Categorias de Productos -->
 <nav class="categories">
   <ul class="categories__list">
-    <li>
-      <a href="#">
-        <img
-          src="/images/nav-home/tablet-cellphone.svg"
-          alt="Icono del menu Electronica"
-        />
-        Electrónica
-      </a>
-    </li>
-    <span></span>
-    <li>
-      <a href="#">
-        <img
-          src="/images/nav-home/hamburger.svg"
-          alt="Icono del menu  Alimentos"
-        />
-        Alimentos
-      </a>
-    </li>
-    <span></span>
-    <li>
-      <a href="#">
-        <img
-          src="/images/nav-home/glass-mug-variant.svg"
-          alt="Icono del menu Bebidas"
-        />
-        Bebidas
-      </a>
-    </li>
-    <span></span>
-    <li>
-      <a href="#">
-        <img
-          src="/images/nav-home/tshirt-crew.svg"
-          alt="Icono del menu Indumentaria"
-        />
-        Indumentaria
-      </a>
-    </li>
-    <span></span>
-    <li>
-      <a href="#">
-        <img
-          src="/images/nav-home/controller-classic.svg"
-          alt="Icono del menu Juegos"
-        />
-        Juegos
-      </a>
-    </li>
-    <span></span>
-    <li>
-      <a href="#">
-        <img
-          src="/images/nav-home/steering.svg"
-          alt="Icono del menu Automotor"
-        />
-        Automotor
-      </a>
-    </li>
-    <span></span>
-    <li>
-      <a href="#">
-        <img
-          src="/images/nav-home/sofa-single.svg"
-          alt="Icono del menu Hogar"
-        />
-        Hogar
-      </a>
-    </li>
-    <span></span>
-    <li>
-      <a href="#">
-        <img
-          src="/images/nav-home/gift-outline.svg"
-          alt="Icono del menu Otros"
-        />
-        Otros
-      </a>
-    </li>
+    
+    <% for(let i=0; i < categories.length; i++ ){ %>
+      <li>
+        <a href="<%= categories[i].url %>">
+          <img
+            src="<%= categories[i].img %>"
+            alt="Icono del menu <%= categories[i].name %>"
+          />
+          <%= categories[i].name %>
+        </a>
+      </li>
+      <span></span>
+    <% } %>
+
   </ul>
 </nav>

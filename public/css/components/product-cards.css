@@ -55,6 +55,10 @@
   font-weight: 300;
 }
 
+.button{
+width: 100%;
+}
+
 @media (min-width: 785px) {
   .main-product__related-product-card {
     width: 244px;
