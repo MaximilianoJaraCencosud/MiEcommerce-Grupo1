@@ -53,6 +53,7 @@ const getCart = async() => {
     })
     .then(data =>{
         if(data.status == 404 || data.length <1){
+            console.log(getProductsByRate(products));
             showEmptyCart(getProductsByRate(products))
         }else{
             listProducts(getProductsCart(data, products));
@@ -129,7 +130,7 @@ const getProductsCart = (userCart, products) => {
 
 //----------------Dibujo el carrito en el HTML
 const listProducts = (products)=>{
-        let content;
+        let content="";
         let totalPoints = 0;
         let cartHtml = document.getElementById('cart-content');
     if(products!= null && products.length>0){
@@ -238,20 +239,16 @@ const getProductsByRate = (products) => {
     content += `main-product__related-product">`
     for(let i= 0; i<4 || i<productByRate.length; i++){
         content+=`
-            <a href="/products/<%= products[i].id %>">
-                <%- include('../partials/product-card', {product: products[i]}) %>
-
-
+            <a href="/products/${productByRate[i].id}">
                 <article class="main-product__related-product-card">
                 <div class="section-article__image">
-              
                   <img src=`
                 if(productByRate[i].images.length == 0) {
                     content+="/images/no-image.jpeg" 
                 } else{ 
-                    content+=`${productByRate[i].images[0]}`
+                    content+=`"${productByRate[i].images[0]}"`
                 }
-                  `alt="Imagen de ${productByRate[i].title}" srcset="" class="imagenPrincipal" />
+                content+=  `alt="Imagen de ${productByRate[i].title}" srcset="" class="imagenPrincipal" />
                 </div>
               
                 <div class="section-article__desc">

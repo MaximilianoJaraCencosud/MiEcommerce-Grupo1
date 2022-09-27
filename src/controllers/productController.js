@@ -37,19 +37,7 @@ const controller = {
   },
 
   cart: async (req, resp) => {
-    const [cart, products] = await Promise.all([getCart(1), getProducts()]);
-    const prByRate = getProductsByRate(products);
-    
-    if (cart.status != 404) {
-      const userCart = getProductsCart(cart, products);
       resp.render("cart");
-    }else{
-      resp.render("cart", {
-        products: null,
-        productsByRate: prByRate,
-        categories
-      });
-    }
   },
 
   product: async (req, resp) => {
