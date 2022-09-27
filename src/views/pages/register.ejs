@@ -14,8 +14,8 @@
       <p class="text-error">El campo Apellido debe contener al menos 2 caracteres</p>
         <%- include('../partials/input',{type: 'email', placeholder: 'Tu email', name: 'Correo'
         }) %> <p class="text-error">El Correo debe mantener el formato estandar Ej: prueba@example.com</p><%- include('../partials/input',{type: 'password', placeholder:
-        'Tu nueva contraseña', name: 'Password' }) %> <p class="text-error">La Contraseña debe contener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula NO puede tener otros símbolos</p> <%- include('../partials/input',{type:
-        'password', placeholder: 'Repite tu contraseña', name: 'RepitePassword' }) %><p class="text-error">La Contraseña debe contener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula NO puede tener otros símbolos</p> <%-
+        'Tu nueva contraseña', name: 'Password' }) %> <p class="text-error">La Contraseña debe contener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y una mayúscula NO puede tener otros símbolos ni contener la palabra password</p> <%- include('../partials/input',{type:
+        'password', placeholder: 'Repite tu contraseña', name: 'RepitePassword' }) %><p class="text-error">Los campos de contraseña deben coincidir</p> <%-
         include('../partials/button',{text: 'Crear Cuenta'}) %>
       </form>
     </div>
