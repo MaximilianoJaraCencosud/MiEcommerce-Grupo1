@@ -1,13 +1,22 @@
 window.addEventListener("load", async function () {
-  let modal = this.document.querySelector('.modal__entero');
+
+  let modal = document.querySelector('.modal__entero');
   modal.classList.add('hidden');
+  let modalButtons = this.document.querySelectorAll('.modal__botones button');
+
+  modalButtons[0].addEventListener('click', (()=>{
+    window.location.href = '/';
+  }));
+
+  modalButtons[1].addEventListener('click', (()=>{
+    modal.classList.add('hidden');
+  }));
 
   let emailsList = await listEmails();
   let errors = [];
 
-  console.log(emailsList)
 
-
+  const loginForm = document.forms.loginForm;
   let button = document.querySelector(".button");
   let inputs = document.querySelectorAll("input");
   let campoNombre = inputs[0];
@@ -38,8 +47,10 @@ window.addEventListener("load", async function () {
   });
 
   // Listener Clik on Button
-  button.addEventListener ('click', async (e)=>{
+  loginForm.addEventListener ('submit', async (e)=>{
     e.preventDefault();
+
+    errors = [];
 
     userName = campoNombre.value;
 
@@ -54,7 +65,7 @@ window.addEventListener("load", async function () {
 
     userPassword = campoPassword.value;
 
-    if(!errors){
+    if(!errors.length){
 
       let url = 'http://localhost:8000/api/user/login';
 
@@ -70,48 +81,51 @@ window.addEventListener("load", async function () {
         },
         "body": JSON.stringify(data)
       }
-      
-      fetch(url, settings)
-        .then((response) =>{
-          console.log(response)
-          if(response.status != 200) throw Error (response.status)
-          return response.json();
-        })
-        .then((data) =>{
-          if(data.id != null){
-            const user = {
-              id: data.id,
-              mail: data.email,
-              name: data.name
-            }
-            localStorage.setItem("user", JSON.stringify(user) );
-            localStorage.setItem("isLogged", true );
-  
-            getCart(data.id);
-  
-            window.location.href = '/';
-          }
-        })
-        .catch((error) =>{
-          if(error == 'Error: 405' || 'Error: 400'){
-            errors.push('Email o contraseña no validos');
-          }
-        })        
-    }else{
-      console.log(errors);
-      
-      let modalTitle = document.querySelector('.modal__titulo');
-      let modalErrors = document.querySelector('.modal__mensaje');
-      modalTitle.innerHTML = 'Error al iniciar sesión';
-      errors.forEach((err)=>{
-        modalErrors.innerHTML += `<p>${err}</p>`
-      });
 
-      modal.classList.remove('hidden');
-      modal.classList.add('animated');
+      try {
+        const resp = await fetch(url, settings);
+        const dat = await resp.json();
+  
+        if(resp.status != 200) throw Error (resp.status);
+  
+        if(dat.id != null){
+          const user = {
+            id: dat.id,
+            mail: dat.email,
+            name: dat.name
+          }
+          localStorage.setItem("user", JSON.stringify(user) );
+          localStorage.setItem("isLogged", true );
+  
+          getCart(dat.id);
+  
+          window.location.href = '/';
+        }
+      } catch (error) {
+        console.log(error);
+        if(error == 'Error: 405' || 'Error: 400'){
+          errors.push('Email o contraseña no validos');
+          console.log(error);
+        }
+      }
+
     }
       
+    let modalTitle = document.querySelector('.modal__titulo');
+    let modalErrors = document.querySelector('.modal__mensaje');
+    modalTitle.innerHTML = 'Error al iniciar sesión';
+
+    modalErrors.innerHTML = '';
+
+    errors.forEach((err)=>{
+      modalErrors.innerHTML += `<p>${err}</p>`
+    });
+
+    modal.classList.remove('hidden');
+    modal.classList.add('animated');
+    
   });
+
 
 });
 

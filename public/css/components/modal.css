@@ -21,14 +21,23 @@
 
 .modal__botones {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   gap: 8px;
   margin: 15px 0 0;
+}
+
+.modal__botones button:hover{
+  cursor: pointer;
 }
 
 .modal__botones button:first-child {
   background-color: var(--green);
 }
+
+.modal__botones button:first-child:hover {
+  background-color: var(--red);
+}
+
 .modal__botones{
   margin-top: 16px;
 }

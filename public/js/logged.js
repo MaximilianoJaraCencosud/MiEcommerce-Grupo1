@@ -1,4 +1,3 @@
-
 (() => {
 
     let loginMenu = document.querySelector('.noLoged');
