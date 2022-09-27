@@ -3,12 +3,15 @@
     <img src="/images/mie.png" alt="Es el logo de la empresa" class="header__logo__1" />
     <img src="/images/miecommerce.png" alt="Es el carrito con la foto de perfil del usuario" class="header__logo__2" />
   </a>
-  <% if(variable_search){ %> 
-  <input type="text" class="header__search" placeholder="Buscar productos..." />
-  <a href="/cart">
-    <img src="/images/cart.png" alt="Es el carrito" class="header__cart" />
-  </a>
-  <% } %> 
-  <img src="/images/profilepiccontorno.svg" alt="Perfil de usuario" class="header__profile-img" />
-  <img src="/images/profilebtn.svg" alt="Perfil de usuario" class="header__profile-btn" />
+  <% if(variable_search){ %>
+    <input type="text" class="header__search" placeholder="Buscar productos..." />
+    <a href="/cart">
+      <img src="/images/cart.png" alt="Es el carrito" class="header__cart" />
+    </a>
+    <% } %>
+      <img src="/images/profilepiccontorno.svg" alt="Perfil de usuario" class="header__profile-img" />
+      <img src="/images/profilebtn.svg" alt="Perfil de usuario" class="header__profile-btn" />
+      <%- include('../partials/menu') %>
 </header>
+
+<script src="/js/menu.js"></script>
