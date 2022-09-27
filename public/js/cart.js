@@ -57,16 +57,15 @@ const getCart = async() => {
             console.log(getProductsByRate(products));
             showEmptyCart(getProductsByRate(products))
         }else{
+            localStorage.setItem('quantity-articles-cart', data.length)
+            let quantityArticles = document.getElementById('quantity-articles-cart');
+            quantityArticles.innerHTML = localStorage.getItem('quantity-articles-cart');
             listProducts(getProductsCart(data, products));
         }
         
     });
 
   }
-
-
-
-
 
 const updateQuantity = (param, txtIdProduct, txtQuantity)=>{
     let datos = localStorage.getItem('user');

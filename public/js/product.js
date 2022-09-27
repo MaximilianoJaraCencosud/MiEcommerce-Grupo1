@@ -47,7 +47,12 @@ const addProductToCart = ()=>{
   })
   .then(res => res.json())
   .then(data =>{
-    console.log(data); 
+    console.log(data);
+    if(localStorage.getItem('quantity-articles-cart')!=null){
+      let quantityArticles = document.getElementById('quantity-articles-cart');
+      quantityArticles.innerHTML = parseInt(localStorage.getItem('quantity-articles-cart'))+1; 
+    }
+    
     alert("Agregaro al carrito");
   });
 }
