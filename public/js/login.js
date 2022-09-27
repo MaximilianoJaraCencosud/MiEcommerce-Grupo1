@@ -1,6 +1,9 @@
-window.addEventListener("load", function () {
+window.addEventListener("load", async function () {
 
-  let emailsList = [];
+  let emailsList = await listEmails();
+  let errors = [];
+
+  console.log(emailsList)
 
 
   let button = document.querySelector(".button");
@@ -9,7 +12,6 @@ window.addEventListener("load", function () {
   let campoPassword = inputs[1];
   button.disabled = true;
   const regularExp = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
-  // const regularExp = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
 
 
   let userName, userPassword;
@@ -42,15 +44,10 @@ window.addEventListener("load", function () {
     userName = campoNombre.value;
 
     // Comprobación si el correo ingresado tiene formato valido
-    if(!regularExp.test(userName)) alert('Pusiste un MAIL no valido');
+    if(!regularExp.test(userName)) errors.push('El email ingresado no tiene un formato valido');
 
-    
-    // Comprobación si existe el correo en la BD
-    if(await existMail(userName)){
-      alert('Existencia');
-    } else{
-      alert('No estamo');
-    }
+    // Comprueba si el mail se encuentra registrado en la BD
+    (!emailsList.includes(userName)) ? errors.push('El email no se encuentra registrado') : '';
 
     userPassword = campoPassword.value;
 
@@ -92,9 +89,15 @@ window.addEventListener("load", function () {
       })
       .catch((error) =>{
         if(error == 'Error: 405' || 'Error: 400'){
-          // this.alert('Correo o password incorrectos')
+          errors.push('Email o contraseña no validos');
         }
       })
+
+      if(errors){
+        errors.forEach((error)=>{
+          console.log(error)
+        })
+      }
   })
 
 
@@ -103,51 +106,26 @@ window.addEventListener("load", function () {
 
 
 
-function listEmails(){
+async function  listEmails(){
   let url = 'http://localhost:8000/api/user';
   let list = [];
 
-  fetch(url)
-    .then((response)=>{
-      return response.json();
-    })
-    .then((data)=>{
+  try {
+    const response = await fetch(url)
+    const data = await response.json();
       data.forEach(element => {
         list.push(element.email);
-      });
-    })
-    .catch((error)=>{
+      })
+    } catch (error) {
       console.log(error)
-    });
+    }
+    finally{
+      return list;
+  }
+    
 }
 
 
-
-
-
-
-function existMail(mail){
-  let url = 'http://localhost:8000/api/user';
-
-  fetch(url)
-    .then((response)=>{
-      return response.json();
-    })
-    .then((data)=>{
-      data.forEach(element => {
-        console.log(element.email);
-        if(element.email == mail){
-          alert('Retorno TRUE')
-          return true;
-        } 
-      });
-      alert('Retorno FALSE')
-      return false;
-    })
-    .catch((error)=>{
-      console.log(error)
-    });
-}
 
 function getCart(id){
   let url = 'http://localhost:8000/api/cart/'
