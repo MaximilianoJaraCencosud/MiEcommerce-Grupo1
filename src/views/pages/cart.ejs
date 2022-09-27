@@ -6,6 +6,8 @@
         Volver</a>
       <h1 class="cart__title">Productos en tu Carrito</h1>
       <section class="cart__product-list">
+
+        
         <% if(products!= null){ %> 
         <% let totalPoints=0; products.map(p=> { %>
           <% totalPoints +=p.product.price * p.quantity %>

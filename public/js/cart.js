@@ -1,6 +1,14 @@
 // Como líder del Equipo de Desarrollo, quiero que, cuando un cliente agrega un producto a su carrito, se almacene esta información dentro de la API que nos proporcionó el equipo de backend, para poder tener persistencia de datos entre sesiones.
 // Para esto debemos respetar el siguiente formato:
-
+// localStorage.setItem(J)
+// const getCart = () => {
+//     let data = localStorage.getItem('user');
+//     let user = JSON.parse(data);
+//    return fetch(`http://localhost:5000/api/cart/${user.id}`)
+//     .then((res) => {
+//       return res.json();
+//     })
+//   }
 
 
 
