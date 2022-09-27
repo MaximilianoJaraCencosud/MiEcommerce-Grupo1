@@ -28,7 +28,10 @@ window.addEventListener("load", function () {
     }
   });
 
-  button.addEventListener('click', (e)=>{
+
+
+  // Listener Clik on Button
+  button.addEventListener ('click', async (e)=>{
     e.preventDefault();
 
 
@@ -38,7 +41,11 @@ window.addEventListener("load", function () {
     if(!regularExp.test(userName)) alert('Pusiste un MAIL no valido');
 
     // Comprobación si existe el correo en la BD
-    if(!existMail(userName)) alert('No existe correo registrado');
+    if(await existMail(userName)  === false){
+      alert('No existe correo registrado');
+    } else{
+      alert('Si amigo !!! existe correo registrado');
+    }
 
     userPassword = campoPassword.value;
 
@@ -89,9 +96,11 @@ window.addEventListener("load", function () {
 });
 
 
+
+
+
 function existMail(mail){
   let url = 'http://localhost:8000/api/user';
-  let exist = false;
 
   fetch(url)
     .then((response)=>{
@@ -99,14 +108,17 @@ function existMail(mail){
     })
     .then((data)=>{
       data.forEach(element => {
-        if(element.email == mail) exist= true;
+        console.log(element.email);
+        if(element.email == mail){
+          exist= true;
+          return true;
+        } 
       });
+      return false;
     })
     .catch((error)=>{
       console.log(error)
     });
-  
-  return exist;
 }
 
 function getCart(id){
