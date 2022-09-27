@@ -25,12 +25,13 @@ window.addEventListener('load', async()=>{
                     let totalPrice = document.getElementById('price'+id);
                     let productPrice = totalPrice.innerHTML /quantity.innerHTML;
                     let cartTotalPrice = document.getElementById('cart-total-price');
-                    cartTotalPrice.innerHTML = parseInt(cartTotalPrice.innerText) - productPrice;
+                    
 
                     if(parseInt(quantity.innerText)>=2){
                         updateQuantity('-', id, quantity.innerText);
                         quantity.innerHTML = parseInt(quantity.innerText) - 1;
                         totalPrice.innerHTML = quantity.innerHTML * productPrice;
+                        cartTotalPrice.innerHTML = parseInt(cartTotalPrice.innerText) - productPrice;
                     } 
                 }else if(e.target.innerText == "Quitar"){
                     let id = e.target.nextElementSibling.value;
