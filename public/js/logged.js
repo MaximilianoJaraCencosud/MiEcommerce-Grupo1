@@ -26,7 +26,7 @@
 
 
 function isLoged (){
-    return localStorage.getItem('user');
+    return localStorage.getItem('isLogged');
 }
 
 function getUserName(){
