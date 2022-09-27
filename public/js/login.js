@@ -1,4 +1,6 @@
 window.addEventListener("load", async function () {
+  let modal = this.document.querySelector('.modal__entero');
+  modal.classList.add('hidden');
 
   let emailsList = await listEmails();
   let errors = [];
@@ -42,10 +44,13 @@ window.addEventListener("load", async function () {
     userName = campoNombre.value;
 
     // Comprobación si el correo ingresado tiene formato valido
-    if(!regularExp.test(userName)) errors.push('El email ingresado no tiene un formato valido');
+    if(regularExp.test(userName)){
+      // Comprueba si el mail se encuentra registrado en la BD
+      (!emailsList.includes(userName)) ? errors.push('El email no se encuentra registrado') : '';
+    }else{
+      errors.push('El email ingresado no tiene un formato valido');
+    } 
 
-    // Comprueba si el mail se encuentra registrado en la BD
-    (!emailsList.includes(userName)) ? errors.push('El email no se encuentra registrado') : '';
 
     userPassword = campoPassword.value;
 
@@ -94,6 +99,16 @@ window.addEventListener("load", async function () {
         })        
     }else{
       console.log(errors);
+      
+      let modalTitle = document.querySelector('.modal__titulo');
+      let modalErrors = document.querySelector('.modal__mensaje');
+      modalTitle.innerHTML = 'Error al iniciar sesión';
+      errors.forEach((err)=>{
+        modalErrors.innerHTML += `<p>${err}</p>`
+      });
+
+      modal.classList.remove('hidden');
+      modal.classList.add('animated');
     }
       
   });
