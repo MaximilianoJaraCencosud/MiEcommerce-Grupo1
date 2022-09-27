@@ -4,18 +4,28 @@
 
 
 
-const productsCarrito = document.querySelectorAll('.cart__product-card__action-amount');
+const productsCarrito = document.querySelectorAll('.cart__product-card__actions');
 
-const updateQuantityLess = ()=>{
-    let txtIdProduct = document.getElementById('txtIdProduct').value;
+const updateQuantity = (param, txtIdProduct, txtQuantity)=>{
     localStorage.setItem('userId', 1);
-    let data = {
+    let data;
+    if(param === "+"){
+        data = {
+            userId: parseInt(localStorage.getItem('userId')),
+            product: {
+                id: parseInt(txtIdProduct),
+                quantity: parseInt(txtQuantity) +1
+            }
+        }
+    }else if(param ==="-"){
+        data = {
             userId: parseInt(localStorage.getItem('userId')),
             product: {
                 id: parseInt(txtIdProduct),
                 quantity: parseInt(txtQuantity) -1
             }
         }
+    }
     fetch('http://localhost:5000/api/cart', {
         method: 'PUT',
         headers: {
@@ -24,18 +34,43 @@ const updateQuantityLess = ()=>{
         body: JSON.stringify(data)     
     })
     .then(res => res.json())
+    //.then(data => console.log(data));
+}
+
+const deleteProduct = (productId)=>{
+    localStorage.setItem('userId', 1);
+
+
+    fetch(`http://localhost:5000/api/cart/${localStorage.getItem('userId')}?productId=${productId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
     .then(data => console.log(data));
 }
 
-
 productsCarrito.forEach(pc =>{
     pc.addEventListener('click', (e)=>{
-        console.log(e)
-        console.log(e.target)
         if(e.target.value == "+"){
-            alert("mas")
+            let id = e.target.previousElementSibling.value; //nextElementSibling.value;
+            let quantity = document.getElementById('quantity'+id);
+            updateQuantity('+', id, quantity.innerText);
+            quantity.innerHTML = parseInt(quantity.innerText) + 1;
+            location.reload();
         }else if(e.target.value == "-"){
-            alert("menos")
+            let id = e.target.nextElementSibling.nextElementSibling.value;
+            let quantity = document.getElementById('quantity'+id);
+            if(parseInt(quantity.innerText)>=2){
+                updateQuantity('-', id, quantity.innerText);
+                //quantity.innerHTML = parseInt(quantity.innerText) - 1;
+                location.reload();
+            } 
+        }else if(e.target.innerText == "Quitar"){
+            let id = e.target.nextElementSibling.value;
+            deleteProduct(id);
+            location.reload();
         }
     })
 })

@@ -18,14 +18,18 @@
               </div>
               <div class="cart__product-card__actions">
                 <%- include('../partials/button',{text: 'Quitar' }) %>
+                <input type="text" value="<%= p.id %> " hidden>
                   <div class="cart__product-card__action-amount">
                     <button value="-">-</button>
-                    <p id="quantity<%= p.title %> ">
+                    <p id="quantity<%= p.id %> ">
                       <%= p.quantity %>
                     </p>
                     <input type="text" id="txtIdProduct<% p.id %> " value="<%= p.id %> " hidden>
                     <button value="+">+</button>
+                    
                   </div>
+
+
                   <p class="cart__product-card__price">
                     <%= p.product.price * p.quantity %>
                   </p>
