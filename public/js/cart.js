@@ -37,26 +37,34 @@ window.addEventListener('DOMContentLoaded', async()=>{
                 }
             })
         });
+
+
+        let darkMode = document.getElementById('darkMode');
+        darkMode.addEventListener('click', ()=>{
+            getCart();
+        })
     });
 
-    let darkMode = document.getElementById('darkMode');
-        darkMode.addEventListener('click', ()=>{
-            let cartCards= document.querySelectorAll('.cart__product-card');
-            setTimeout(() => {
-                if(localStorage.getItem('darkMode')=='true'){
-                    console.log(localStorage.getItem('darkMode'));
-                    cartCards.forEach(c=>{
-                        c.classList.add('card-product-cart-dark')
-                    })
-                }else{
-                    cartCards.forEach(c=>{
-                        c.classList.remove('card-product-cart-dark')
-                    })
-                }
-            }, 150);
+    
+
+    // let darkMode = document.getElementById('darkMode');
+    //     darkMode.addEventListener('click', ()=>{
+    //         // let cartCards= document.querySelectorAll('.cart__product-card');
+    //         // setTimeout(() => {
+    //         //     if(localStorage.getItem('darkMode')=='true'){
+    //         //         console.log(localStorage.getItem('darkMode'));
+    //         //         cartCards.forEach(c=>{
+    //         //             c.classList.add('card-product-cart-dark')
+    //         //         })
+    //         //     }else{
+    //         //         cartCards.forEach(c=>{
+    //         //             c.classList.remove('card-product-cart-dark')
+    //         //         })
+    //         //     }
+    //         // }, 150);
             
            
-        })
+    //     })
 })
 
 
@@ -155,13 +163,17 @@ const listProducts = (products)=>{
         let totalPoints = 0;
         let cartHtml = document.getElementById('cart-content');
     if(products!= null && products.length>0){
-        
+        let claseDark = "";
+        if(localStorage.getItem('darkMode')=='true'){
+            claseDark='card-product-cart-dark';
+        }
+
         products.map((p)=>{
 
             totalPoints+= p.product.price * p.quantity;    
             content += `
             <section class="cart__product-list">
-                <article class="cart__product-card">
+                <article class="cart__product-card ${claseDark}">
                 <div class="cart__product-card__content">
                     <img src="${p.product.images[0]}" class="cart__product-card__img" alt="${p.product.title}" />
                     <h3 class="cart__product-card__title">
