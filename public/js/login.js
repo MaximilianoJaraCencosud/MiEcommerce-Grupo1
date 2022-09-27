@@ -159,7 +159,11 @@ function getCart(id){
   })
     .then((data)=>{
       console.log(data);
+
   })
+
+      localStorage.setItem('quantity-articles-cart', data.length)
+    })
     .catch((error)=>{
       console.log(error)
   })

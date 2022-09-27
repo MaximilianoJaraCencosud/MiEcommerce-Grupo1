@@ -25,6 +25,8 @@
     z-index: 11;
 }
 
+/* .cart-button__count: */
+
 .cart-button__count p{
     text-align: center;
 }
