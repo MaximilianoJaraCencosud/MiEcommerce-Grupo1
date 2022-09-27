@@ -3,12 +3,34 @@
     <img src="/images/mie.png" alt="Es el logo de la empresa" class="header__logo__1" />
     <img src="/images/miecommerce.png" alt="Es el carrito con la foto de perfil del usuario" class="header__logo__2" />
   </a>
+
   <% if(variable_search){ %> 
   <input type="text" class="header__search" placeholder="Buscar productos..." />
-  <a href="/cart">
-    <%- include('../partials/cartButton') %>
-  </a>
-  <% } %> 
-  <img src="/images/profilepiccontorno.svg" alt="Perfil de usuario" class="header__profile-img" />
-  <img src="/images/profilebtn.svg" alt="Perfil de usuario" class="header__profile-btn" />
+
+  <div class="noLoged hidden">
+    <a href="/login">Ingresar</a>
+    <span></span>
+    <a href="/register">Registrarse</a>
+  </div>
+
+  <div class="loged flex">
+    <a href="/cart">
+      <%- include('../partials/cartButton') %>
+    </a>
+    
+    <%- include('../partials/userButton') %>
+    
+    <% } else {%>
+      <div class="noLoged hidden">
+        <a href="/login">Ingresar</a>
+        <span></span>
+        <a href="/register">Registrarse</a>
+      </div>
+    <% } %> 
+
+
+  </div>
+
+
+
 </header>

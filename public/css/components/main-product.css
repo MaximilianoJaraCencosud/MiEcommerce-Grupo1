@@ -120,7 +120,7 @@
   margin-top: 24px;
 }
 
-.button {
+.button__addCart {
   margin-top: 16px;
 }
 
@@ -206,7 +206,7 @@
     order: 1;
   }
 
-  .button {
+  .button__addCart {
     margin: 12px 0;
   }
 }
