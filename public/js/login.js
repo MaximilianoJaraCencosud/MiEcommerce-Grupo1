@@ -32,7 +32,6 @@ window.addEventListener("load", function () {
     userPassword = campoPassword.value;
 
     let url = 'http://localhost:8000/api/user/login';
-    console.log(userName, userPassword);
 
     let data = {
       email : userName,
@@ -49,13 +48,25 @@ window.addEventListener("load", function () {
 
     fetch(url, settings)
       .then((response) =>{
+        console.log(response)
+        if(response.status != 200) throw Error (response.status)
         return response.json();
       })
       .then((data) =>{
-        console.log(data);
+        if(data.id != null){
+          const user = {
+            id: data.id,
+            mail: data.email,
+            name: data.name
+          }
+          localStorage.setItem("user", JSON.stringify(user) );
+
+        }
       })
       .catch((error) =>{
-        console.log(error);
+        if(error == 'Error: 405'){
+          this.alert('Correo o password incorrectos')
+        }
       })
   })
 });

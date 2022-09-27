@@ -26,10 +26,12 @@
 
 
 function isLoged (){
-    return localStorage.getItem('id');
+    return localStorage.getItem('user');
 }
 
 function getUserName(){
-    return localStorage.getItem('name');
+    let data = localStorage.getItem('user');
+    let user = JSON.parse(data);
+    return user.name;
 }
 
