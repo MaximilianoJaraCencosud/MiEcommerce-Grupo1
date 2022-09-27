@@ -61,10 +61,11 @@ productsCarrito.forEach(pc =>{
             location.reload();
         }else if(e.target.value == "-"){
             let id = e.target.nextElementSibling.nextElementSibling.value;
+            
             let quantity = document.getElementById('quantity'+id);
             if(parseInt(quantity.innerText)>=2){
                 updateQuantity('-', id, quantity.innerText);
-                //quantity.innerHTML = parseInt(quantity.innerText) - 1;
+                quantity.innerHTML = parseInt(quantity.innerText) - 1;
                 location.reload();
             } 
         }else if(e.target.innerText == "Quitar"){
@@ -74,5 +75,4 @@ productsCarrito.forEach(pc =>{
         }
     })
 })
-// console.log(productsCarrito)
 
