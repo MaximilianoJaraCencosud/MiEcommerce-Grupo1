@@ -9,16 +9,17 @@
         let userName = getUserName();
         let $userName = document.querySelector(".user-button__name p");
 
-        $userName.innerHTML = userName;
-
-        loginMenu.style.display = 'none'
-        userMenu.style.display = 'flex'
+        
+        if(loginMenu) loginMenu.style.display = 'none'
+        if(userMenu){
+            $userName.innerHTML = userName;
+            userMenu.style.display = 'flex'
+        } 
 
     }else{
-        console.log('No logueado');
 
-        loginMenu.style.display = 'flex'
-        userMenu.style.display = 'none'
+        if(loginMenu) loginMenu.style.display = 'flex'
+        if(userMenu) userMenu.style.display = 'none'
     }
     
 })();
