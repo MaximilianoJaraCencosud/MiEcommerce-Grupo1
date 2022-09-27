@@ -32,6 +32,7 @@ function isLoged (){
 function getUserName(){
     let data = localStorage.getItem('user');
     let user = JSON.parse(data);
+    console.log(user);
     return user.name;
 }
 
