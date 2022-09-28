@@ -168,7 +168,10 @@ const listProducts = (products)=>{
                 </div>
                 <div class="cart__product-card__actions">
                     <!-- <%- include('../partials/button',{text: 'Quitar' }) %> -->
+                    
+                    <div class="cart__product-card__actions__btn-container">
                     <button class="button">Quitar</button>
+                    </div>
 
                     <input type="text" value="${p.id}" hidden>
                     <div class="cart__product-card__action-amount">

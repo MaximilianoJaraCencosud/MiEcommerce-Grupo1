@@ -53,7 +53,7 @@
 .cart__product-card__price {
   font-size: 24px;
   font-weight: bold;
-  width: 76px;
+  width: 80px;
 }
 
 .cart__product-card__action-amount {
@@ -68,6 +68,11 @@
   background-color: rgba(255, 255, 255, 0);
   border: none;
   margin: 8px;
+}
+
+.cart__product-card__action-amount button:hover {
+  cursor: pointer;
+  transform: scale(1.5);
 }
 
 .cart__product-card__action-amount p {
@@ -114,6 +119,10 @@
 
 .cart-error__products {
   margin: 0 auto;
+}
+
+.cart__product-card__actions__btn-container{
+  width: 80px;
 }
 
 @media screen and (min-width: 1024px) {
