@@ -42,11 +42,6 @@ li {
   min-height: 100vh;
 }
 
-.layout-container {
-  flex-grow: 1;
-  padding-bottom: 25px;
-}
-
 .main{
   display: flex;
   flex-direction: column;
@@ -70,6 +65,6 @@ li {
 
 @media (min-width: 811px) {
   .layout-container {
-    padding-bottom: 48px;
+    /* padding-bottom: 48px; */
   }
 }

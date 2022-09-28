@@ -15,6 +15,10 @@
             userMenu.style.display = 'flex'
         } 
 
+        let quantityArticles = document.getElementById('quantity-articles-cart');
+        let cant = parseInt(localStorage.getItem('quantity-articles-cart')); 
+        quantityArticles.innerHTML = cant;
+
     }else{
 
         if(loginMenu) loginMenu.style.display = 'flex'

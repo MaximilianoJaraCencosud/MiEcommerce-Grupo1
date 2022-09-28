@@ -1,9 +1,15 @@
 .user-button{
+    position: relative;
+    width: 90px;
     display: flex;
+    justify-content: end;
     align-items: center;
 }
 
 .user-button__profilePic{
+    position: absolute;
+    left: 5px;
+    top: 0;
     width: 32px;
     height: 32px;
     border-radius: 50%;

@@ -20,15 +20,10 @@ function removeSelected(miniaturas, imagenPrincipal){
   miniaturas.forEach(img => {
     img.classList.remove('img-selected');
   });
-  
-  
-  
-  
-  
-
 }
 
 const addProductToCart = ()=>{
+
   let txtId = document.getElementById('txtId').value;
   let datos = localStorage.getItem('user');
   let user = JSON.parse(datos);
@@ -65,3 +60,16 @@ const addProductToCart = ()=>{
 
 const btnAddTocart = document.getElementById('btnAddToCart');
 btnAddTocart.addEventListener('click', addProductToCart);
+
+function animateButton (){
+  let cartButton = document.querySelector('.cart-button');
+  let quantityArticles = document.querySelector('#quantity-articles-cart');
+  
+  quantityArticles.innerHTML = parseInt(localStorage.getItem('quantity-articles-cart')); 
+
+  cartButton.classList.add('animation');
+
+  setTimeout(() => {
+    cartButton.classList.remove('animation');
+  }, "500")
+}
