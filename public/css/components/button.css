@@ -13,6 +13,8 @@
   
   .button:hover{
     background-color: var(--red);
+    cursor: pointer;
+    transform: scale(1.03);
   }
   
   .button:disabled {
