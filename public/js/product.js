@@ -1,5 +1,25 @@
+//MODAL
+const modal = document.querySelector("#modal__entero");
+const modalTitle = document.querySelector("#modal__titulo");
+const modalErrors = document.querySelector("#modal__mensaje");
+
+modal.classList.add("hidden");
+let modalButtons = document.querySelectorAll("#modal__botones button");
+
+modalButtons[0].addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+modalButtons[1].addEventListener("click", () => {
+  modal.classList.add("hidden");
+  window.location.href = "/register";
+});
+  //---------
 
 window.addEventListener("load", function () {
+
+
+
   let miniaturas = document.querySelectorAll('.main-product__miniaturas img')
   let imagenPrincipal = document.querySelector('.imagenPrincipal')
 
@@ -14,9 +34,14 @@ window.addEventListener("load", function () {
     this.classList.add('img-selected')
   })
   }
+  
 if(this.localStorage.getItem('user') === null){
   let btn = document.querySelector(".button__addCart");
-  btn.disabled = true;
+  btn.addEventListener('click', ()=>{
+      modalTitle.innerHTML = "Debes iniciar sesión para comprar productos";
+      modal.classList.remove("hidden");
+      modal.classList.add("animated");
+  })
 }else{
   let btn = document.querySelector(".button__addCart");
   btn.disabled = false;
@@ -68,7 +93,10 @@ const addProductToCart = ()=>{
 }
 
 const btnAddTocart = document.getElementById('btnAddToCart');
-btnAddTocart.addEventListener('click', addProductToCart);
+if(localStorage.getItem('user')!=null){
+  btnAddTocart.addEventListener('click', addProductToCart);
+}
+
 
 function animateButton (){
   let cartButton = document.querySelector('.cart-button');
