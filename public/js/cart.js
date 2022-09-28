@@ -42,29 +42,13 @@ window.addEventListener('DOMContentLoaded', async()=>{
         let darkMode = document.getElementById('darkMode');
         darkMode.addEventListener('click', ()=>{
             getCart();
+            location.reload();
         })
     });
 
     
 
-    // let darkMode = document.getElementById('darkMode');
-    //     darkMode.addEventListener('click', ()=>{
-    //         // let cartCards= document.querySelectorAll('.cart__product-card');
-    //         // setTimeout(() => {
-    //         //     if(localStorage.getItem('darkMode')=='true'){
-    //         //         console.log(localStorage.getItem('darkMode'));
-    //         //         cartCards.forEach(c=>{
-    //         //             c.classList.add('card-product-cart-dark')
-    //         //         })
-    //         //     }else{
-    //         //         cartCards.forEach(c=>{
-    //         //             c.classList.remove('card-product-cart-dark')
-    //         //         })
-    //         //     }
-    //         // }, 150);
-            
-           
-    //     })
+    
 })
 
 
