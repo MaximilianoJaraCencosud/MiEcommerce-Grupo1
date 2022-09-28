@@ -69,6 +69,10 @@
   border: none;
   margin: 8px;
 }
+.cart__product-card__action-amount p {
+ width: 30px;
+ text-align: center;
+}
 
 .cart__product-card__action-amount button:hover {
   cursor: pointer;
