@@ -103,7 +103,7 @@ window.addEventListener("load", async function () {
           }
 
           modal.classList.add("hidden");
-          // window.location.href = "/";
+          window.location.href = "/";
         }
       } catch (error) {
         if (error == "Error: 405" || "Error: 400") {
