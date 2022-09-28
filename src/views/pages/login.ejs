@@ -8,6 +8,7 @@
       <form class="access__card__form" name="loginForm">
         <%- include('../partials/input',{type: 'text', placeholder: 'Ingrese email', name: 'Correo'  }) %> 
         <%- include('../partials/input',{type: 'password', placeholder: 'Tu contraseña', name: 'Password' }) %> 
+        <label for="keepSession" class="keepSession"><input type="checkbox" name="keepSession" id="keepSession">Mantener sesión iniciada</label>
         <%-include('../partials/button',{text: 'Iniciar Sesión', type: 'submit'}) %>
       </form>
     </div>
