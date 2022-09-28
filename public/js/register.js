@@ -11,6 +11,7 @@ window.addEventListener("load", () => {
 
   inputs.forEach((inp) => {
     inp.addEventListener("blur", validarFormulario);
+    inp.addEventListener("keyup", validarFormulario);
   });
 
   async function validarFormulario(e) {
@@ -121,9 +122,9 @@ window.addEventListener("load", () => {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         let input = document.querySelectorAll('input');
-        let firstname = input[0].value;
-        let lastname = input[1].value;
-        let email = input[2].value;
+        let firstname = input[0].value.trimStart().trimEnd();
+        let lastname = input[1].value.trimStart().trimEnd();
+        let email = input[2].value.trimStart().trimEnd();
         let password = input[3].value;
         POSTFunction(firstname, lastname, email, password)
       })
