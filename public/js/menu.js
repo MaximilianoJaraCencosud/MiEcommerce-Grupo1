@@ -1,33 +1,31 @@
 window.addEventListener("DOMContentLoaded", function () {
-  
   // Items del menu
-  const closeSession = document.querySelector('.menu__closeSession');
-  const homeLink = document.querySelector('.menu__home');
-  const cartLink = document.querySelector('.menu__cart');
-  const favoritesLink = document.querySelector('.menu__favorites');
-  const historyLink = document.querySelector('.menu__history');
+  const closeSession = document.querySelector(".menu__closeSession");
+  const homeLink = document.querySelector(".menu__home");
+  const cartLink = document.querySelector(".menu__cart");
+  const favoritesLink = document.querySelector(".menu__favorites");
+  const historyLink = document.querySelector(".menu__history");
 
-  closeSession.addEventListener('click', (e)=>{
+  closeSession.addEventListener("click", (e) => {
     localStorage.clear();
     window.location.href = "/";
   });
 
-  homeLink.addEventListener('click', (e)=>{
+  homeLink.addEventListener("click", (e) => {
     window.location.href = "/";
   });
 
-  cartLink.addEventListener('click', (e)=>{
+  cartLink.addEventListener("click", (e) => {
     window.location.href = "/cart";
   });
 
-  favoritesLink.addEventListener('click', (e)=>{
+  favoritesLink.addEventListener("click", (e) => {
     window.location.href = "/checkout";
   });
 
-  historyLink.addEventListener('click', (e)=>{
+  historyLink.addEventListener("click", (e) => {
     window.location.href = "/checkout";
   });
-
 
   let buttonMenu = document.querySelector(".user-button");
   let buttonMenuMobile = document.querySelector(".header__profile-img");
@@ -45,10 +43,16 @@ window.addEventListener("DOMContentLoaded", function () {
   let accessCard = document.querySelectorAll(".access__card");
   let descLineProd = document.querySelectorAll(".desc");
   let darkModeText = document.querySelector(".menu__theme span");
+  let userName = document.querySelector(".menu__profile p");
+  let darkModeIcon = document.querySelector(".menu__theme__icon");
 
   let buttonAmount = document.querySelectorAll(
     ".cart__product-card__action-amount button"
   );
+
+  let data = localStorage.getItem("user");
+  data = JSON.parse(data);
+  userName.textContent = data.name;
 
   if (buttonMenu) {
     console.log(menu);
@@ -90,6 +94,8 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   function modoOscuro() {
+    darkModeIcon.src = "/images/sun-solid.svg";
+    darkModeIcon.style = "filter: invert(100%)";
     body.classList.add("background-dark");
     header.classList.add("card-product-cart-dark");
     footer.classList.add("card-product-cart-dark");
@@ -127,6 +133,8 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 
   function modoClaro() {
+    darkModeIcon.src = "/images/moon-solid.svg";
+    darkModeIcon.style = "filter: invert(0%)";
     body.classList.remove("background-dark");
     header.classList.remove("card-product-cart-dark");
     footer.classList.remove("card-product-cart-dark");
@@ -166,6 +174,4 @@ window.addEventListener("DOMContentLoaded", function () {
       element.classList.remove("descLineProd");
     });
   }
-
 });
-

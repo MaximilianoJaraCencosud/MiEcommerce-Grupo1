@@ -1,3 +1,4 @@
+localStorage.clear();
 window.addEventListener("load", async function () {
   const modal = document.querySelector(".modal__entero");
   const modalTitle = document.querySelector(".modal__titulo");

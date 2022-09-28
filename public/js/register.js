@@ -1,3 +1,4 @@
+localStorage.clear();
 window.addEventListener("load", () => {
   let button = document.querySelector(".button");
   let inputs = document.querySelectorAll(".inputs-generic");
