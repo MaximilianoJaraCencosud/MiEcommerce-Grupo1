@@ -67,7 +67,7 @@ const addProductToCart = ()=>{
           id: parseInt(txtId),
           }
       }
-  fetch('http://localhost:8000/api/cart', {
+  fetch('http://localhost:5000/api/cart', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ const addProductToCart = ()=>{
       let userInfo = localStorage.getItem('user');
       let user = JSON.parse(userInfo);
       //Este fetch es usado para recargar la cantidad de productos en el carrito
-      fetch(`http://localhost:8000/api/cart/${user.id}`)
+      fetch(`http://localhost:5000/api/cart/${user.id}`)
       .then((res) => res.json())
       .then(data =>{
         localStorage.setItem('quantity-articles-cart', data.length)

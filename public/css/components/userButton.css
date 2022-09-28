@@ -8,7 +8,7 @@
 
 .user-button__profilePic{
     position: absolute;
-    left: 5px;
+    left:0;
     top: 0;
     width: 32px;
     height: 32px;
@@ -22,6 +22,16 @@
 }
 
 .user-button__name{
+    display:none;
     padding: 4px;
     margin-left: 24px;
+}
+
+@media (min-width:811px){
+    .user-button__name{
+        display:block;
+    }
+    .user-button__profilePic{
+left: 5px;
+    }
 }

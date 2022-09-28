@@ -66,7 +66,7 @@ window.addEventListener("load", async function () {
     userPassword = campoPassword.value;
 
     if (!errors.length) {
-      let url = "http://localhost:8000/api/user/login";
+      let url = "http://localhost:5000/api/user/login";
 
       let data = {
         email: userName,
@@ -127,7 +127,7 @@ window.addEventListener("load", async function () {
 });
 
 async function listEmails() {
-  let url = "http://localhost:8000/api/user";
+  let url = "http://localhost:5000/api/user";
   let list = [];
 
   try {
@@ -144,7 +144,7 @@ async function listEmails() {
 }
 
 function getCart(id) {
-  let url = "http://localhost:8000/api/cart/";
+  let url = "http://localhost:5000/api/cart/";
   fetch(`${url}${id}`)
     .then((response) => {
       return response.json();

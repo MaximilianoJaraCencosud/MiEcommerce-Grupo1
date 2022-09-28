@@ -52,7 +52,7 @@ const getCart = async() => {
     const products = await  getProducts();
     let data = localStorage.getItem('user');
     let user = JSON.parse(data);
-   return fetch(`http://localhost:8000/api/cart/${user.id}`)
+   return fetch(`http://localhost:5000/api/cart/${user.id}`)
     .then((res) => {
       return res.json();
     })
@@ -95,7 +95,7 @@ const updateQuantity = (param, txtIdProduct, txtQuantity)=>{
             }
         }
     }
-    fetch('http://localhost:8000/api/cart', {
+    fetch('http://localhost:5000/api/cart', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ const updateQuantity = (param, txtIdProduct, txtQuantity)=>{
 const deleteProduct = (productId)=>{
     let datos = localStorage.getItem('user');
     let user = JSON.parse(datos);
-    fetch(`http://localhost:8000/api/cart/${user.id}?productId=${productId}`, {
+    fetch(`http://localhost:5000/api/cart/${user.id}?productId=${productId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ const deleteProduct = (productId)=>{
 
 //----------------Obtengo listado total de productos
 const getProducts = () => {
-    return fetch("http://localhost:8000/api/product").then((res) => {
+    return fetch("http://localhost:5000/api/product").then((res) => {
       return res.json();
     });
   };

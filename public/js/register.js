@@ -133,7 +133,7 @@ window.addEventListener("load", () => {
 });
 
 async function listEmails() {
-  let url = "http://localhost:8000/api/user";
+  let url = "http://localhost:5000/api/user";
   let list = [];
 
   try {
@@ -156,7 +156,7 @@ function POSTFunction(firstname,lastname,email,password){
         email: email,
         password: password
     }
-    fetch("http://localhost:8000/api/user", {
+    fetch("http://localhost:5000/api/user", {
         method : "POST",
         headers: {
             "Content-Type": "application/json"
