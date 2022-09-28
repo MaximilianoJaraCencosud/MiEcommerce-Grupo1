@@ -15,7 +15,6 @@ window.addEventListener("load", function () {
   })
   }
 if(this.localStorage.getItem('user') === null){
-  console.log();
   let btn = document.querySelector(".button__addCart");
   btn.disabled = true;
 }else{
