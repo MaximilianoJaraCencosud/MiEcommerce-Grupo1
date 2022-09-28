@@ -14,6 +14,15 @@ window.addEventListener("load", function () {
     this.classList.add('img-selected')
   })
   }
+if(this.localStorage.getItem('user') === null){
+  let btn = document.querySelector(".button__addCart");
+  btn.disabled = true;
+}else{
+  let btn = document.querySelector(".button__addCart");
+  btn.disabled = false;
+}
+  
+  
 });
 
 function removeSelected(miniaturas, imagenPrincipal){
@@ -73,3 +82,4 @@ function animateButton (){
     cartButton.classList.remove('animation');
   }, "500")
 }
+
