@@ -54,24 +54,27 @@ window.addEventListener("DOMContentLoaded", function () {
   data = JSON.parse(data);
   userName.textContent = data.name;
 
-  if (buttonMenu) {
-    console.log(menu);
-    buttonMenu.addEventListener("click", () => {
+  window.addEventListener("click", function (e) {
+    if (e.target === buttonMenu);
+    {
+      buttonMenu.addEventListener("click", () => {
+        console.log("estoy agragando la clase");
+        menu.classList.add("hide");
+      });
+    }
+    let findEtiqueta = document.querySelectorAll(".menuShow");
+    let bool = false;
+    for (let i = 0; i < findEtiqueta.length; i++) {
+      if (findEtiqueta[i] === e.target || menu.contains(e.target)) {
+        bool = true;
+      }
+    }
+    if (bool) {
       menu.classList.add("hide");
-    });
-  }
-
-  if (buttonMenuMobile) {
-    buttonMenuMobile.addEventListener("click", () => {
-      menu.classList.add("hide");
-    });
-  }
-
-  if (menu) {
-    menu.addEventListener("click", () => {
+    } else {
       menu.classList.remove("hide");
-    });
-  }
+    }
+  });
 
   if (localStorage.getItem("darkMode") === "true") {
     modoOscuro();
