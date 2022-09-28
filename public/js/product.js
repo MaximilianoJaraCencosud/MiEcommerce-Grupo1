@@ -42,15 +42,19 @@ const addProductToCart = ()=>{
   })
   .then(res => res.json())
   .then(data =>{
-    console.log(data);
-    if(localStorage.getItem('quantity-articles-cart')!=null){
-      let quantityArticles = document.getElementById('quantity-articles-cart');
-      let cant = parseInt(localStorage.getItem('quantity-articles-cart'))+1; 
-      quantityArticles.innerHTML = cant;
-      localStorage.setItem('quantity-articles-cart', cant)
-    }
-    animateButton();
-    
+      let userInfo = localStorage.getItem('user');
+      let user = JSON.parse(userInfo);
+      //Este fetch es usado para recargar la cantidad de productos en el carrito
+      fetch(`http://localhost:8000/api/cart/${user.id}`)
+      .then((res) => res.json())
+      .then(data =>{
+        localStorage.setItem('quantity-articles-cart', data.length)
+        let quantityArticles = document.getElementById('quantity-articles-cart');
+        quantityArticles.innerHTML = localStorage.getItem('quantity-articles-cart'); 
+        let carritoHeader = document.querySelector('.cart-button');
+        carritoHeader.style.animation = 'shake 0.2s linear';
+
+      } )
   });
 }
 

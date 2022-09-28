@@ -43,7 +43,7 @@ li {
 }
 
 .layout-container {
-  /* flex-grow: 1; */
+  flex-grow: 1;
   padding-bottom: 25px;
 }
 
