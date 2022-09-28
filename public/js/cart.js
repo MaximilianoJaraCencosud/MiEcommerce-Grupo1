@@ -30,20 +30,14 @@ window.addEventListener('DOMContentLoaded', async()=>{
                         totalPrice.innerHTML = quantity.innerHTML * productPrice;
                         cartTotalPrice.innerHTML = parseInt(cartTotalPrice.innerText) - productPrice;
                     } 
-                }else if(e.target.innerText == "Quitar"){
+                }else if(e.target.value == "quitar"){
                     let id = e.target.nextElementSibling.value;
+                    console.log(id);
                     deleteProduct(id);
                     location.reload();
                 }
             })
         });
-
-
-        let darkMode = document.getElementById('darkMode');
-        darkMode.addEventListener('click', ()=>{
-            getCart();
-            location.reload();
-        })
     });
 
     
@@ -147,17 +141,13 @@ const listProducts = (products)=>{
         let totalPoints = 0;
         let cartHtml = document.getElementById('cart-content');
     if(products!= null && products.length>0){
-        let claseDark = "";
-        if(localStorage.getItem('darkMode')=='true'){
-            claseDark='card-product-cart-dark';
-        }
 
         products.map((p)=>{
 
             totalPoints+= p.product.price * p.quantity;    
             content += `
             <section class="cart__product-list">
-                <article class="cart__product-card ${claseDark}">
+                <article class="cart__product-card">
                 <div class="cart__product-card__content">
                     <img src="${p.product.images[0]}" class="cart__product-card__img" alt="${p.product.title}" />
                     <h3 class="cart__product-card__title">
@@ -169,18 +159,19 @@ const listProducts = (products)=>{
                 <div class="cart__product-card__actions">
                     <!-- <%- include('../partials/button',{text: 'Quitar' }) %> -->
                     
-                    <div class="cart__product-card__actions__btn-container">
-                    <button class="button">Quitar</button>
+                    <div class="cart__product-card__actions__btn-container" >
+                    <button class="button" value="quitar">Quitar</button>
+                    <input type="text" value="${p.id}" hidden>
                     </div>
 
-                    <input type="text" value="${p.id}" hidden>
+                    
                     <div class="cart__product-card__action-amount">
-                        <button value="-">-</button>
+                        <button value="-" class="btn-quantity">-</button>
                         <p id="quantity${p.id}">
                         ${p.quantity}
                         </p>
                         <input type="text" id="txtIdProduct${p.id}" value="${p.id}" hidden>
-                        <button value="+">+</button>
+                        <button value="+" class="btn-quantity">+</button>
                         
                     </div>
 
@@ -203,7 +194,6 @@ const listProducts = (products)=>{
         
             <section class="cart__pay">
                 <a href="/checkout">
-                <!-- <%- include('../partials/button',{text: 'Ir a Pagar' }) %> -->
                 <button class="button">Ir a Pagar</button>
                 </a>
             </section>
