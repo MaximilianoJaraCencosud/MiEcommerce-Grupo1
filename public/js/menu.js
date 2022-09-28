@@ -1,4 +1,34 @@
 window.addEventListener("DOMContentLoaded", function () {
+  
+  // Items del menu
+  const closeSession = document.querySelector('.menu__closeSession');
+  const homeLink = document.querySelector('.menu__home');
+  const cartLink = document.querySelector('.menu__cart');
+  const favoritesLink = document.querySelector('.menu__favorites');
+  const historyLink = document.querySelector('.menu__history');
+
+  closeSession.addEventListener('click', (e)=>{
+    localStorage.clear();
+    window.location.href = "/";
+  });
+
+  homeLink.addEventListener('click', (e)=>{
+    window.location.href = "/";
+  });
+
+  cartLink.addEventListener('click', (e)=>{
+    window.location.href = "/cart";
+  });
+
+  favoritesLink.addEventListener('click', (e)=>{
+    window.location.href = "/checkout";
+  });
+
+  historyLink.addEventListener('click', (e)=>{
+    window.location.href = "/checkout";
+  });
+
+
   let buttonMenu = document.querySelector(".user-button");
   let buttonMenuMobile = document.querySelector(".header__profile-img");
   let menu = document.querySelector(".menu");
@@ -136,4 +166,6 @@ window.addEventListener("DOMContentLoaded", function () {
       element.classList.remove("descLineProd");
     });
   }
+
 });
+
