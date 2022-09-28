@@ -16,6 +16,20 @@
   display: none;
 }
 
+.header__search-container{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.header__search-container button{
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+}
+
 .header__search {
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 16px;
@@ -120,6 +134,10 @@
 }
 
 @media (min-width: 800px) {
+  .header__search-container button{
+    right: 64px;
+  }
+
   .menu {
     top: 75px;
     right: 10px;

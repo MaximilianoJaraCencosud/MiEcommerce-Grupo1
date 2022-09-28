@@ -5,7 +5,11 @@
   </a>
 
   <% if(variable_search){ %> 
-  <input type="text" class="header__search" placeholder="Buscar productos..." />
+  <div class="header__search-container">
+    <input type="text" class="header__search" placeholder="Buscar productos..." />
+    <button><img src="/images/magnify.svg" alt="Lupa de busqueda"></button> 
+  </div>
+
 
   <div class="noLoged hidden">
     <a href="/login">Ingresar</a>
