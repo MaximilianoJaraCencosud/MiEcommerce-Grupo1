@@ -40,6 +40,12 @@ li {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: calc(100vh - 53px);
+}
+
+.layout-container {
+  /* flex-grow: 1; */
+  padding-bottom: 25px;
 }
 
 .main{
