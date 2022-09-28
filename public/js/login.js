@@ -1,5 +1,8 @@
 window.addEventListener("load", async function () {
-  let modal = document.querySelector(".modal__entero");
+  const modal = document.querySelector(".modal__entero");
+  const modalTitle = document.querySelector(".modal__titulo");
+  const modalErrors = document.querySelector(".modal__mensaje");
+
   modal.classList.add("hidden");
   let modalButtons = this.document.querySelectorAll(".modal__botones button");
 
@@ -17,6 +20,7 @@ window.addEventListener("load", async function () {
   const loginForm = document.forms.loginForm;
   let button = document.querySelector(".button");
   let inputs = document.querySelectorAll("input");
+  let checkSession = document.querySelector('#keepSession');
   let campoNombre = inputs[0];
   let campoPassword = inputs[1];
   button.disabled = true;
@@ -93,29 +97,31 @@ window.addEventListener("load", async function () {
 
           getCart(dat.id);
 
-          window.location.href = "/";
+          console.log(checkSession.checked);
+          if(checkSession.checked){
+            localStorage.setItem('keepSession', true);
+          }
+
+          modal.classList.add("hidden");
+          // window.location.href = "/";
         }
       } catch (error) {
-        console.log(error);
         if (error == "Error: 405" || "Error: 400") {
           errors.push("Email o contraseña no validos");
-          console.log(error);
         }
       }
     }
-
-    let modalTitle = document.querySelector(".modal__titulo");
-    let modalErrors = document.querySelector(".modal__mensaje");
-    modalTitle.innerHTML = "Error al iniciar sesión";
-
-    modalErrors.innerHTML = "";
-
-    errors.forEach((err) => {
-      modalErrors.innerHTML += `<p>${err}</p>`;
-    });
-
-    modal.classList.remove("hidden");
-    modal.classList.add("animated");
+    if(errors.length){
+      modalTitle.innerHTML = "Error al iniciar sesión";
+      modalErrors.innerHTML = "";
+  
+      errors.forEach((err) => {
+        modalErrors.innerHTML += `<p>${err}</p>`;
+      });
+  
+      modal.classList.remove("hidden");
+      modal.classList.add("animated");
+    }
   });
 });
 

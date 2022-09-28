@@ -1,6 +1,6 @@
 .cart {
   padding: 16px;
-  min-height: calc(100vh - 155px);
+  /* min-height: calc(100vh - 155px); */
 }
 
 .cart__title {
@@ -127,7 +127,7 @@
 
 @media screen and (min-width: 1024px) {
   .cart {
-    min-height: calc(100vh - 107px);
+    /* min-height: calc(100vh - 107px); */
     padding: 16px 128px 16px 128px;
   }
 
