@@ -20,15 +20,10 @@ function removeSelected(miniaturas, imagenPrincipal){
   miniaturas.forEach(img => {
     img.classList.remove('img-selected');
   });
-  
-  
-  
-  
-  
-
 }
 
 const addProductToCart = ()=>{
+
   let txtId = document.getElementById('txtId').value;
   let datos = localStorage.getItem('user');
   let user = JSON.parse(datos);
@@ -50,12 +45,27 @@ const addProductToCart = ()=>{
     console.log(data);
     if(localStorage.getItem('quantity-articles-cart')!=null){
       let quantityArticles = document.getElementById('quantity-articles-cart');
-      quantityArticles.innerHTML = parseInt(localStorage.getItem('quantity-articles-cart'))+1; 
+      let cant = parseInt(localStorage.getItem('quantity-articles-cart'))+1; 
+      quantityArticles.innerHTML = cant;
+      localStorage.setItem('quantity-articles-cart', cant)
     }
+    animateButton();
     
-    alert("Agregaro al carrito");
   });
 }
 
 const btnAddTocart = document.getElementById('btnAddToCart');
 btnAddTocart.addEventListener('click', addProductToCart);
+
+function animateButton (){
+  let cartButton = document.querySelector('.cart-button');
+  let quantityArticles = document.querySelector('#quantity-articles-cart');
+  
+  quantityArticles.innerHTML = parseInt(localStorage.getItem('quantity-articles-cart')); 
+
+  cartButton.classList.add('animation');
+
+  setTimeout(() => {
+    cartButton.classList.remove('animation');
+  }, "500")
+}

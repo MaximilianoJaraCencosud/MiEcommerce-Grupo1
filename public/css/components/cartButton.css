@@ -25,8 +25,19 @@
     z-index: 11;
 }
 
-/* .cart-button__count: */
-
 .cart-button__count p{
     text-align: center;
+}
+
+.animation{
+    animation: added .5s alternate;
+}
+
+@keyframes added {
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
