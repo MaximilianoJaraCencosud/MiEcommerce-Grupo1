@@ -116,6 +116,16 @@ window.addEventListener("load", () => {
       validate.includes(1)
     ) {
       button.disabled = false;
+      let form = document.querySelector('.access__card__form')
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let input = document.querySelectorAll('input');
+        let firstname = input[0].value;
+        let lastname = input[1].value;
+        let email = input[2].value;
+        let password = input[3].value;
+        POSTFunction(firstname, lastname, email, password)
+      })
     }
   }
 });
@@ -135,4 +145,23 @@ async function listEmails() {
   } finally {
     return list;
   }
+}
+
+function POSTFunction(firstname,lastname,email,password){
+    let data = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password
+    }
+    fetch("http://localhost:8000/api/user", {
+        method : "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    }).then((result) => result.json()).then(res => {
+        return location.href = "/login"
+    }).catch(err => console.log(err))
+  
 }
