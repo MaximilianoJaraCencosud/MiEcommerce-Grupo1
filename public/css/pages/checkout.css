@@ -1,4 +1,7 @@
 .main-checkout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: url('../../images/underconstruction.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -15,4 +18,8 @@
 .main-checkout button{
     /* text-align: center; */
     margin-top: 250px;
+}
+
+.noImplemented__btn-container{
+    max-width: 150px;
 }

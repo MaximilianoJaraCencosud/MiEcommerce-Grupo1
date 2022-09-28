@@ -5,11 +5,17 @@
   <div class="access__container">
     <div class="access__card">
       <h2 class="access__card__title">¡Registrate!</h2>
-      <form class="access__card__form" action="" method="POST">
-        <%- include('../partials/input',{type: 'email', placeholder: 'Tu email'
-        }) %> <%- include('../partials/input',{type: 'password', placeholder:
-        'Tu nueva contraseña' }) %> <%- include('../partials/input',{type:
-        'password', placeholder: 'Repite tu contraseña' }) %> <%-
+      <form class="access__card__form" action="">
+        <%- include('../partials/input',{type: 'text', placeholder: 'Nombre', name: 'Nombre'
+        }) %>
+        <p class="text-error">El campo Nombre debe contener al menos 2 caracteres</p>
+        <%- include('../partials/input',{type: 'text', placeholder: 'Apellido', name: 'Apellido'
+      }) %>
+      <p class="text-error">El campo Apellido debe contener al menos 2 caracteres</p>
+        <%- include('../partials/input',{type: 'email', placeholder: 'Tu email', name: 'Correo'
+        }) %> <p class="text-error">El Correo debe mantener el formato estandar Ej: prueba@example.com</p><%- include('../partials/input',{type: 'password', placeholder:
+        'Tu nueva contraseña', name: 'Password' }) %> <p class="text-error">La Contraseña debe contener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y una mayúscula NO puede tener otros símbolos ni contener la palabra password</p> <%- include('../partials/input',{type:
+        'password', placeholder: 'Repite tu contraseña', name: 'RepitePassword' }) %><p class="text-error">Los campos de contraseña deben coincidir</p> <%-
         include('../partials/button',{text: 'Crear Cuenta'}) %>
       </form>
     </div>
@@ -17,5 +23,8 @@
       ¿Ya tienes cuenta? <a class="access__text__link" href="login">Inicia Sesión</a>
     </p>
   </div>
+ 
+  
 </main>
+<script src="/js/register.js" type="module"></script>
 <%- include('../partials/footer') %>

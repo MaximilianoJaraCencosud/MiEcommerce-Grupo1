@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Electronica",
+        "img": "/images/nav-home/tablet-cellphone.svg",
+        "href": "#"
+    },
+    {
+        "name": "Alimentos",
+        "img": "/images/nav-home/hamburger.svg",
+        "href": "#"
+    },
+    {
+        "name": "Bebidas",
+        "img": "/images/nav-home/glass-mug-variant.svg",
+        "href": "#"
+    },
+    {
+        "name": "Indumentaria",
+        "img": "/images/nav-home/tshirt-crew.svg",
+        "href": "#"
+    },
+    {
+        "name": "Juegos",
+        "img": "/images/nav-home/controller-classic.svg",
+        "href": "#"
+    },
+    {
+        "name": "Automotor",
+        "img": "/images/nav-home/steering.svg",
+        "href": "#"
+    },
+    {
+        "name": "Hogar",
+        "img": "/images/nav-home/sofa-single.svg",
+        "href": "#"
+    },
+    {
+        "name": "Otros",
+        "img": "/images/nav-home/gift-outline.svg",
+        "href": "#"
+    }
+] 

@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
+/* Declaración de variables */
+:root{
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
+  --dark-gray: rgba(73, 79, 81, 1);
+  --light-gray: rgba(153, 153, 153, 1);  
+  --green: rgba(12, 176, 147, 1);
+  --red: rgba(236, 0, 0, 1);
+}
+
 *,
 *::after,
 *::before {
@@ -14,12 +24,12 @@ html {
 }
 
 body {
-  background-color: #efefef;
+  background-color: #e5e5e5e5;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--black);
 }
 
 li {
@@ -30,11 +40,33 @@ li {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* min-height: calc(100vh - 53px); */
 }
 
 .layout-container {
   flex-grow: 1;
   padding-bottom: 25px;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 16px 0px 16px;
+}
+
+.main__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden{
+  display: none;
+}
+
+.flex{
+  display: flex;
 }
 
 @media (min-width: 811px) {

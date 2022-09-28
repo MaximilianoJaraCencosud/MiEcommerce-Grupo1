@@ -1,0 +1,20 @@
+.products-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 32px auto 0;
+}
+
+.products-list__title {
+    font-size: 24px;
+    font-weight: 400;
+    align-self: flex-start;
+    margin-bottom: 16px;
+}
+
+
+@media (min-width: 811px) {
+    .products-list {
+        max-width: 1024px;
+    }
+}
