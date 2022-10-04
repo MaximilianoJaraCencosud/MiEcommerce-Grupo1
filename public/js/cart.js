@@ -32,9 +32,8 @@ window.addEventListener('DOMContentLoaded', async()=>{
                     } 
                 }else if(e.target.value == "quitar"){
                     let id = e.target.nextElementSibling.value;
-                    console.log(id);
                     deleteProduct(id);
-                    location.reload();
+                    
                 }
             })
         });
@@ -63,7 +62,6 @@ const getCart = async() => {
             quantityArticles.innerHTML = localStorage.getItem('quantity-articles-cart');
             showEmptyCart(getProductsByRate(products))
         }else{
-            console.log(data);
             localStorage.setItem('quantity-articles-cart', data.length)
             let quantityArticles = document.getElementById('quantity-articles-cart');
             quantityArticles.innerHTML = localStorage.getItem('quantity-articles-cart');
@@ -103,7 +101,7 @@ const updateQuantity = (param, txtIdProduct, txtQuantity)=>{
         body: JSON.stringify(data)     
     })
     .then(res => res.json())
-    //.then(data => console.log(data));
+   
 }
 
 const deleteProduct = (productId)=>{
@@ -116,7 +114,7 @@ const deleteProduct = (productId)=>{
         }
     })
     .then(res => res.json())
-    .then(data => console.log(data));
+    .then(data => location.reload());
 }
 
 

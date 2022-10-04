@@ -98,7 +98,6 @@ window.addEventListener("load", async function () {
 
           getCart(dat.id);
 
-          console.log(checkSession.checked);
           if(checkSession.checked){
             localStorage.setItem('keepSession', true);
           }
@@ -137,7 +136,7 @@ async function listEmails() {
       list.push(element.email);
     });
   } catch (error) {
-    console.log(error);
+
   } finally {
     return list;
   }
@@ -150,11 +149,10 @@ function getCart(id) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       localStorage.setItem("quantity-articles-cart", data.length);
     })
 
     .catch((error) => {
-      console.log(error);
+      
     });
 }

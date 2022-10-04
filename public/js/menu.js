@@ -58,7 +58,6 @@ window.addEventListener("DOMContentLoaded", function () {
     if (e.target === buttonMenu);
     {
       buttonMenu.addEventListener("click", () => {
-        console.log("estoy agragando la clase");
         menu.classList.add("hide");
       });
     }
