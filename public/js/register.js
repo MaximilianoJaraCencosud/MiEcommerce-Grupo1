@@ -143,7 +143,7 @@ async function listEmails() {
       list.push(element.email);
     });
   } catch (error) {
-    console.log(error);
+    
   } finally {
     return list;
   }
@@ -164,6 +164,6 @@ function POSTFunction(firstname,lastname,email,password){
         body: JSON.stringify(data)
     }).then((result) => result.json()).then(res => {
         return location.href = "/login"
-    }).catch(err => console.log(err))
+    })//.catch(err => console.log(err))
   
 }
