@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', async()=>{
                     } 
                 }else if(e.target.value == "quitar"){
                     let id = e.target.nextElementSibling.value;
-                    console.log(id);
+                    // console.log(id);
                     deleteProduct(id);
                     location.reload();
                 }

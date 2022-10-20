@@ -69,6 +69,12 @@ li {
   display: flex;
 }
 
+.link-effect:hover{
+  color: var(--green);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 @media (min-width: 811px) {
   .layout-container {
     padding-bottom: 48px;
